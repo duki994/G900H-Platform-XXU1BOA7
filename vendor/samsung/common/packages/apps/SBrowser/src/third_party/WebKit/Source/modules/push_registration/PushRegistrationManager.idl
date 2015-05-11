@@ -1,0 +1,15 @@
+// Copyright 2014 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+[
+    Conditional=PUSH_API,
+    NoInterfaceObject,
+    RuntimeEnabled=PushRegistration,
+    WillBeGarbageCollected,
+] interface PushRegistrationManager {
+    [CallWith=ExecutionContext, ImplementedAs=registerPush] Promise register();
+    [CallWith=ExecutionContext, ImplementedAs=unregisterPush] Promise unregister();
+    [CallWith=ExecutionContext, ImplementedAs=isRegisteredPush] Promise isRegistered();
+    [CallWith=ExecutionContext, ImplementedAs=hasPermissionPush] Promise hasPermission();
+};

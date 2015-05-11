@@ -1,0 +1,23 @@
+<!-- Connection tests -->
+<div id="connection-view-tab-content" class="content-box">
+  <div style='margin-bottom: 20px'>
+    <h1>Connection count</h1>
+  </div>
+  <h2>resource_scheduler</h2>
+  <form id="connection-view-max-num-delayable-requests-per-client-form">
+    <label>kMaxNumDelayableRequestsPerClient <input id="connection-view-max-num-delayable-requests-per-client-input" type="number"></label>
+    <input id="connection-view-max-num-delayable-requests-per-client-submit" type="submit"
+        value="set">
+  </form>
+  <form id="connection-view-max-num-delayable-requests-per-host-form">
+    <label>kMaxNumDelayableRequestsPerHost <input id="connection-view-max-num-delayable-requests-per-host-input" type="number"></label>
+    <input id="connection-view-max-num-delayable-requests-per-host-submit" type="submit"
+        value="set">
+  </form>
+  <h2>client_socket_pool_manager</h2>
+  <form id="connection-view-max-sockets-per-group-form">
+    <label>g_max_sockets_per_group <input id="connection-view-max-sockets-per-group-input" type="number"></label>
+    <input id="connection-view-max-sockets-per-group-submit" type="submit"
+        value="set">
+  </form>  
+</div>

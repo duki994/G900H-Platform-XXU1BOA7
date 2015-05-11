@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2012 The Chromium Authors. All rights reserved.
+
+     Use of this source code is governed by a BSD-style license that can be
+     found in the LICENSE file.
+-->
+
+<!-- DO NOT ADD STRINGS HERE.
+
+    Android chrome strings now live in
+    chrome/android/java/strings/android_chrome_strings.grd
+
+    See http://www.chromium.org/developers/design-documents/ui-localization
+-->
+<resources>
+  <string name="contextmenu_open">Open</string>
+  <string name="contextmenu_openlink_newwindow">Open in new window</string>
+  <string name="ctxtmenu_open_in_incognito_tab">Open in Incognito tab</string>
+  <string name="cntxt_save_link">Save link</string>
+  <string name="contextmenu_copylink">Copy link</string>
+  <string name="ctxtmenu_copy_link_text">Select text</string>
+  <string name="ctxtmenu_save_image">Save image</string>
+  <string name="ctxtmenu_select_text">Select text</string>
+  <string name="cntxt_copy_image">Copy image</string>
+  <string name="cntxt_view_image">View image</string>
+  <string name="certificate_title">Certificate Viewer</string>
+  <string name="smartcard_btn_smart_card">Smart card</string>
+  <string name="smartcard_btn_android">Android</string>
+</resources>

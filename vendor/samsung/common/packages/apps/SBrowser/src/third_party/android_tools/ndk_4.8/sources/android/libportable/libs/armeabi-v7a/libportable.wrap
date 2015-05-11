@@ -1,0 +1,17 @@
+--wrap=_Unwind_GetGR
+--wrap=_Unwind_GetIP
+--wrap=_Unwind_SetGR
+--wrap=_Unwind_SetIP
+--wrap=__swap16md
+--wrap=__swap32md
+--wrap=feclearexcept
+--wrap=fegetenv
+--wrap=fegetexceptflag
+--wrap=fegetround
+--wrap=feholdexcept
+--wrap=feraiseexcept
+--wrap=fesetenv
+--wrap=fesetexceptflag
+--wrap=fesetround
+--wrap=fetestexcept
+--wrap=feupdateenv

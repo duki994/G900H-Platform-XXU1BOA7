@@ -1,0 +1,16 @@
+// Copyright 2014 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// webkit-prefixed Screen Orientation API that is actually shipping.
+[
+    RuntimeEnabled=PrefixedScreenOrientation,
+    ImplementedAs=ScreenOrientation
+] partial interface Screen {
+    [ImplementedAs=orientation] readonly attribute DOMString webkitOrientation;
+
+    [ImplementedAs=lockOrientation, RaisesException] boolean webkitLockOrientation(DOMString orientation);
+
+    [ImplementedAs=unlockOrientation] void webkitUnlockOrientation();
+    attribute EventHandler onwebkitorientationchange;
+};

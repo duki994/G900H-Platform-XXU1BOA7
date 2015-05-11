@@ -1,0 +1,8 @@
+{
+  "description": "Samsung-supplied test site wikipedia.com",
+  "archive_data_file": "data/samsung_sites_wikipedia.json",
+  "user_agent_type": "mobile",
+  "pages": [
+  { "url": "http://www.wikipedia.com" }
+  ]
+}

@@ -1,0 +1,111 @@
+body {
+  background-color: #E6E6E6;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 10pt;
+  margin: 50px 40px 20px 40px;
+  #text-align: center;
+}
+
+#main-frame-error {
+  margin: auto;
+  max-width: 540px;
+  min-width: 200px;
+}
+
+/* Don't use the main frame div when the error is in a subframe. */
+html[subframe] #main-frame-error {
+  display: none;
+}
+
+#box {
+  background-color: #fbfbfb;
+  border: 1px solid #AAA;
+  border-bottom: 1px solid #888;
+  border-radius: 3px;
+  color: black;
+<if expr="not pp_ifdef('android') and not pp_ifdef('ios')">
+  /* Not done on mobile for performance reasons. */
+  box-shadow: 0px 2px 2px #AAA;
+</if>
+}
+
+h1 {
+  margin: 10px 0px 25px 0px;
+  font-weight: normal;
+  font-size: 1.35em;
+}
+
+.lineHeight {
+  line-height: 20px;
+}
+
+a {
+  color: #15c;
+  text-decoration: none;
+}
+
+#content-top {
+  margin: 50px 20px 50px 20px;
+}
+
+#help-box-outer {
+  overflow: hidden;
+  -webkit-transition: height ease-in 218ms;
+}
+
+#help-box-inner {
+  background-color: #fbfbfb;
+  border-top: 1px solid #EEE;
+  border-radius: 0px 0px 3px 3px;
+  color: black;
+  text-align: start;
+}
+
+[jscontent=failedUrl] {
+  overflow-wrap: break-word;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Increase line height at higher resolutions. */
+@media (min-width: 641px) and (min-height: 641px) {
+  body {
+    font-size: 13pt;
+    line-height: 22px;
+  }
+  #main-frame-error {
+    max-width: 700px;
+  }
+  #box {
+    padding: 10px;
+  }
+  h1 {
+    margin: 20px 0px 10px 0px;
+  }
+  #help-box-inner {
+    line-height: 18px;
+  }
+}
+
+/* Decrease padding at low sizes. */
+@media (max-width: 640px), (max-height: 640px) {
+  body {
+    margin: 15px;
+  }
+  h1 {
+    margin: 10px 0px 15px 0px;
+  }
+  #content-top {
+    margin: 15px;
+  }
+  #help-box-inner {
+    padding: 20px;
+  }
+}
+
+/* Don't allow overflow when in a subframe. */
+html[subframe] body {
+  overflow: hidden;
+}

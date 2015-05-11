@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.mozilla.gecko"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="17"
+        android:targetSdkVersion="19" />
+
+    <!--
+       Note that we do not include the Announcements manifest
+       fragments here: the received intents call into Fennec, so
+       there's minimal point right now.  We don't include the Health
+       Report Upload fragments either: not only do the intents call
+       back into Fennec, the Health Report Content Provider needs to
+       run in the Fennec process.
+    -->
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="org.mozilla.gecko.permissions.BROWSER_PROVIDER" />
+    <uses-permission android:name="org.mozilla.gecko.permissions.FORMHISTORY_PROVIDER" />
+    <uses-permission android:name="org.mozilla.gecko.permissions.PASSWORD_PROVIDER" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+
+    <application
+        android:debuggable="true"
+        android:icon="@drawable/icon"
+        android:label="@string/sync_app_name" >
+        <activity
+            android:name="com.sec.android.app.sbrowser.firefox.SetupSyncActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:icon="@drawable/icon"
+            android:label="@string/sync_app_name"
+            android:taskAffinity="org.mozilla.gecko.sync.setup"
+            android:theme="@style/SyncTheme"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden" >
+
+            <!-- android:configChanges: SetupSyncActivity will handle orientation changes; no longer restarts activity (default) -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!--
+                     Adding a launcher will make Firefox Sync appear
+                     on the Apps screen, which we only want when testing.
+                -->
+                <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            </intent-filter>
+        </activity>
+
+        <!--
+             On tablets, SyncTheme is in a dialog, which is not what
+             we want for install instructions.
+        -->
+        <activity
+            android:name="org.mozilla.gecko.sync.setup.activities.WebViewActivity"
+            android:theme="@style/Gecko" />
+        <activity
+            android:name="org.mozilla.gecko.fxa.activities.AccountActivity"
+            android:clearTaskOnLaunch="true"
+            android:theme="@style/SyncTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="org.mozilla.gecko.sync.setup.activities.RedirectToSetupActivity"
+            android:clearTaskOnLaunch="true"
+            android:theme="@style/SyncTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!--
+             Secondary Sync activities. These depend on other activities for context
+             (display a result, or a next step). Since these don't make sense as stand-alone
+             activities, set excludeFromRecents="true"
+        -->
+        <activity
+            android:name="org.mozilla.gecko.sync.setup.activities.SetupFailureActivity"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:theme="@style/SyncTheme" />
+        <activity
+            android:name="org.mozilla.gecko.sync.setup.activities.SetupSuccessActivity"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:theme="@style/SyncTheme" />
+        <activity
+            android:name="org.mozilla.gecko.sync.config.activities.SelectEnginesActivity"
+            android:excludeFromRecents="true"
+            android:taskAffinity="org.mozilla.gecko.sync.setup"
+            android:theme="@style/SyncTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="org.mozilla.gecko.sync.receivers.UpgradeReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="org.mozilla.gecko.sync.setup.activities.SendTabActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:icon="@drawable/icon"
+            android:label="@string/sync_app_name"
+            android:taskAffinity="org.mozilla.gecko.sync.setup"
+            android:theme="@style/SyncTheme"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.mozilla.gecko.fxa.activities.FxAccountStatusActivity"
+            android:clearTaskOnLaunch="true"
+            android:label="@string/fxaccount_status_activity_label"
+            android:theme="@style/FxAccountTheme.FxAccountStatusActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize" >
+
+            <!--
+                 Adding a launcher will make this activity appear on the
+                 Apps screen, which we only want when testing.
+            -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+             <!--   <category android:name="android.intent.category.LAUNCHER" /> --> 
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sec.android.app.sbrowser.firefox.FxAccountGetStartedActivity"
+            android:clearTaskOnLaunch="true"
+            android:label="@string/sync_app_name"
+            android:launchMode="singleTask"
+            android:theme="@style/FxAccountTheme"
+            android:windowSoftInputMode="adjustResize" >
+
+            <!--
+                 Adding a launcher will make this activity appear on the
+                 Apps screen, which we only want when testing.
+            -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" /> 
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.sec.android.app.sbrowser.firefox.FxAccountCreateAccountActivity"
+            android:theme="@style/FxAccountTheme"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="com.sec.android.app.sbrowser.firefox.FxAccountConfirmAccountActivity"
+            android:theme="@style/FxAccountTheme"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="com.sec.android.app.sbrowser.firefox.FxAccountSignInActivity"
+            android:theme="@style/FxAccountTheme"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="com.sec.android.app.sbrowser.firefox.FxAccountVerifiedAccountActivity"
+            android:theme="@style/FxAccountTheme"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="org.mozilla.gecko.fxa.activities.FxAccountUpdateCredentialsActivity"
+            android:theme="@style/FxAccountTheme"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="com.sec.android.app.sbrowser.firefox.FxAccountCreateAccountNotAllowedActivity"
+            android:theme="@style/FxAccountTheme"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+
+        <service
+            android:name="org.mozilla.gecko.sync.setup.SyncAuthenticatorService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/sync_authenticator" />
+        </service>
+        <service
+            android:name="org.mozilla.gecko.sync.syncadapter.SyncService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.content.SyncAdapter"
+                android:resource="@xml/sync_syncadapter" />
+        </service>
+        <service
+            android:name="org.mozilla.gecko.sync.receivers.SyncAccountDeletedService"
+            android:exported="false" >
+        </service>
+        <service
+            android:name="com.sec.android.app.sbrowser.firefox.FxAccountAuthenticatorService"
+            android:launchMode="singleTop"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/fxaccount_authenticator" />
+        </service>
+        <service
+            android:name="com.sec.android.app.sbrowser.firefox.FxAccountSyncService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.content.SyncAdapter"
+                android:resource="@xml/fxaccount_syncadapter" />
+        </service>
+    </application>
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:label="Sync tests"
+        android:targetPackage="org.mozilla.gecko" />
+
+</manifest>

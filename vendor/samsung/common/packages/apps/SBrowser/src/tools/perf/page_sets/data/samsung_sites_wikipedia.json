@@ -1,0 +1,8 @@
+{
+    "description": "Describes the Web Page Replay archives for a page set. Don't edit by hand! Use record_wpr for updating.", 
+    "archives": {
+        "samsung_sites_wikipedia_000.wpr": [
+            "http://www.wikipedia.com"
+        ]
+    }
+}

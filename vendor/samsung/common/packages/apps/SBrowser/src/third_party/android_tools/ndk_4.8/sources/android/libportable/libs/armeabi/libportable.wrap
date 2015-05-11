@@ -1,0 +1,4 @@
+--wrap=_Unwind_GetGR
+--wrap=_Unwind_GetIP
+--wrap=_Unwind_SetGR
+--wrap=_Unwind_SetIP

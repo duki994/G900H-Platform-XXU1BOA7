@@ -1,0 +1,42 @@
+<polymer-element name="viewer-toolbar" attributes="fadingIn"
+    on-mouseover="{{fadeIn}}" on-mousemove="{{fadeIn}}"
+    on-mouseout="{{fadeOut}}">
+  <template>
+    <link rel="stylesheet" href="viewer-toolbar.css">
+    <div id="toolbar">
+      <content></content>
+    </div>
+  </template>
+  <script>
+    Polymer('viewer-toolbar', {
+      fadingIn: false,
+      timerId: undefined,
+      ready: function() {
+        this.fadingInChanged();
+      },
+      fadeIn: function() {
+        this.fadingIn = true;
+      },
+      fadeOut: function() {
+        this.fadingIn = false;
+      },
+      fadingInChanged: function() {
+        if (this.fadingIn) {
+          this.style.opacity = 1;
+          if (this.timerId !== undefined) {
+            clearTimeout(this.timerId);
+            this.timerId = undefined;
+          }
+        } else {
+          if (this.timerId === undefined) {
+            this.timerId = setTimeout(
+              function() {
+                this.style.opacity = 0;
+                this.timerId = undefined;
+              }.bind(this), 3000);
+          }
+        }
+      }
+    });
+  </script>
+</polymer-element>

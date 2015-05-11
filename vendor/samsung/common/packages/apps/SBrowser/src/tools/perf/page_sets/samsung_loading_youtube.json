@@ -1,0 +1,8 @@
+{
+  "description": "Samsung-supplied test site m.youtube.com",
+  "archive_data_file": "data/samsung_sites_youtube.json",
+  "user_agent_type": "mobile",
+  "pages": [
+  { "url": "http://m.youtube.com" }
+  ]
+}

@@ -1,0 +1,59 @@
+# Version number of the x86 host toolchain for untrusted targets.
+# Each of these toolchain revision numbers should only be updated
+# whenever there has been a real change to the corresponding
+# toolchain, so that new toolchain tarballs are not downloaded
+# unnecessarily.  There is no need to keep these numbers in sync
+# with each other.
+BIONIC_VERSION=12744
+NEWLIB_VERSION=12761
+GLIBC_VERSION=12664
+PNACL_VERSION=12772
+
+# ARM trusted toolchain is just a sysroot image.  The trusted cross
+# compiler comes from the debian/ubuntu package.
+ARM_TRUSTED_VERSION=12292
+
+# TODO(bradnelson): Provide an automated way to update this.
+#
+# To update manually, go to the toolchain waterfall:
+#   http://build.chromium.org/p/client.nacl.toolchain/console
+# In the "merged" view choose a green build from native-newlib-arm and
+# update the revision (leftmost column) below. Visit each of the Linux,
+# Mac and Win builders and obtain the download URL for their GCC and
+# binutils tarballs. Obtain the ALL_NEWLIB and ALL_GCC_LIBS hashes from
+# the linux build. Finally, update the tool hashes below.
+#
+# ARM untrusted toolchain component versions to use.
+# Results of toolchain_build.py revision: 12737
+LINUX_BINUTILS_ARM=binutils_arm_i686_linux_65259973ba690888d58dece0899670737eb0be2d
+LINUX_GCC_ARM=gcc_arm_i686_linux_57d16f8560e018a51fa19d9f0310b4338b5ab21f
+MAC_BINUTILS_ARM=binutils_arm_x86_64_apple_darwin_2860f12a78b29147152b55277a5bafebae841781
+MAC_GCC_ARM=gcc_arm_x86_64_apple_darwin_e36fe5f39fa260acb8f9a40e6eb6a35957b17e2b
+WIN_BINUTILS_ARM=binutils_arm_i686_w64_mingw32_a163a6cdc4eb40a840dc532d2b04288909f878ca
+WIN_GCC_ARM=gcc_arm_i686_w64_mingw32_e2795614d35891c141a5be132f6ef24845db9e9a
+ALL_NEWLIB_ARM=newlib_arm_614c8b3bfd667bfadd33b00df00d98bc1a750e9f
+ALL_GCC_LIBS_ARM=gcc_libs_arm_b1925a96f6ff872b7d2bad776aadd3471454d10b
+
+# Tool hashes
+# In order to get the new hashes after changing the revs above
+# run: build/download_toolchains.py --arm-untrusted --allow-bionic --hash
+NACL_TOOL_ALL_GCC_LIBS_ARM_HASH=e181b6ad11bbeaed51949b397301f9f32637be67
+NACL_TOOL_ALL_NEWLIB_ARM_HASH=20302b9455f9f78c6c0fbdcda647eaaa19d1f387
+NACL_TOOL_LINUX_BINUTILS_ARM_HASH=5a96ce03c230439611d7a25ad10cbf59a98cb06f
+NACL_TOOL_LINUX_GCC_ARM_HASH=edaeab9ccf41c7841c1ec694e00a4bdfc269bb13
+NACL_TOOL_MAC_BINUTILS_ARM_HASH=5987f36c3ffadc5ccefb2800efefa91bd6f4afa8
+NACL_TOOL_MAC_GCC_ARM_HASH=a225ae8d4bd5e771c866b156eb8dbdb8c5d55b10
+NACL_TOOL_WIN_BINUTILS_ARM_HASH=dbd84e640451417b289471e576f1716489a683e7
+NACL_TOOL_WIN_GCC_ARM_HASH=a30dc68a6db89ff696d205e9990e19f6d3d2928e
+NACL_TOOL_LINUX_ARM-TRUSTED_HASH=dbea575fc43c5c20d61f706d165888f2509fdbe8
+NACL_TOOL_LINUX_ARM_BIONIC_HASH=1745f6c6c6b4520b588b2032f8ca2170eb5d1025
+NACL_TOOL_LINUX_X86_HASH=196f1ab274de0a0632b7ccc74ad8aaff4cf942de
+NACL_TOOL_LINUX_X86_NEWLIB_HASH=1f986bb0f2ee08d75ac0b72eba4034142b7a081a
+NACL_TOOL_MAC_X86_HASH=b2fe2c9bea2c0329b54856946fa4f929c174e5cc
+NACL_TOOL_MAC_X86_NEWLIB_HASH=773486d1488de8c606672aec625abed9008ac5b6
+NACL_TOOL_PNACL_LINUX_X86_HASH=552cb19daa5802583209a47c6d9f90ee11c32872
+NACL_TOOL_PNACL_MAC_X86_HASH=8c31e8c35d3e09725ea056dbf993289668092f32
+NACL_TOOL_PNACL_TRANSLATOR_HASH=c7501d3ff8f8c49d6eac45a83eb9bddd0127d7fe
+NACL_TOOL_PNACL_WIN_X86_HASH=2e1dcf9271a290eb66a82dff3ac0271e1d70c2a7
+NACL_TOOL_WIN_X86_HASH=9100005989940c0029b0129df011bfeb44f680f6
+NACL_TOOL_WIN_X86_NEWLIB_HASH=5d76a37e0bec4baf0166fefa086200262e4ec600

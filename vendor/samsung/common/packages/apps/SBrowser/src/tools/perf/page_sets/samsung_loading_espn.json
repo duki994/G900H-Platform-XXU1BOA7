@@ -1,0 +1,8 @@
+{
+  "description": "Samsung-supplied test site m.espn.go.com",
+  "archive_data_file": "data/samsung_sites_espn.json",
+  "user_agent_type": "mobile",
+  "pages": [
+  { "url": "http://m.espn.go.com" }
+  ]
+}

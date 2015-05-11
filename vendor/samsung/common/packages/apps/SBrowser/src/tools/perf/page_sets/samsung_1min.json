@@ -1,0 +1,25 @@
+{
+  "description": "One minute test by Samsung.",
+  "archive_data_file": "data/samsung_1min.json",
+  "user_agent_type": "mobile",
+  "pages": [
+    {
+      "url": "http://december.com/html/demo/hello.html",
+      "navigate_steps" : [
+        { "action": "navigate" },
+        { "action": "wait", "seconds": 1},
+        { "action": "javascript", "expression": "window.location.href=\"http://m.youtube.com\""},
+        { "action": "wait", "seconds": 10 },
+        { "action": "javascript", "expression": "window.location.href=\"http://www.google.com\""},
+        { "action": "wait", "seconds": 5 },
+        { "action": "javascript", "expression": "window.location.href=\"http://m.espn.go.com\""},
+        { "action": "wait", "seconds": 10 },
+        { "action": "javascript", "expression": "window.location.href=\"http://www.google.com\""},
+        { "action": "wait", "seconds": 5 },
+        { "action": "javascript", "expression": "window.location.href=\"http://www.wikipedia.com\""},
+        { "action": "wait", "seconds": 1 },
+        { "action": "javascript", "expression": "window.monsoonMultipageReady=true"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+[
+  {
+    "title": "Explore",
+    "items": [
+      {
+        "title": "Apps",
+        "items": [
+          {
+            "title": "Learn Basics",
+            "href": "/apps/first_app",
+            "items": [
+              {
+                "title": "Create Your First App",
+                "href": "/apps/first_app"
+              },
+              {
+                "title": "App Architecture",
+                "href": "/apps/app_architecture"
+              },
+              {
+                "title": "App Lifecycle",
+                "href": "/apps/app_lifecycle"
+              },
+              {
+                "title": "Content Security Policy",
+                "href": "/apps/contentSecurityPolicy"
+              }
+            ]
+          },
+          {
+            "title": "Learn with Codelab",
+            "href": "/apps/app_codelab1_setup",
+            "items": [
+              {
+                "title": "1 - Set Up Development Environment",
+                "href": "/apps/app_codelab1_setup"
+              },
+              {
+                "title": "2 - Create Basic App",
+                "href": "/apps/app_codelab2_basic"
+              },
+              {
+                "title": "3 - Create MVC",
+                "href": "/apps/app_codelab3_mvc"
+              },
+              {
+                "title": "4 - Save & Fetch Data",
+                "href": "/apps/app_codelab5_data"
+              },
+              {
+                "title": "5 - Manage App Lifecycle",
+                "href": "/apps/app_codelab6_lifecycle"
+              },
+              {
+                "title": "6 - Access User's Data",
+                "href": "/apps/app_codelab7_useridentification"
+              },
+              {
+                "title": "7 - Access Web Resources",
+                "href": "/apps/app_codelab8_webresources"
+              },
+              {
+                "title": "8 - Publish App",
+                "href": "/apps/app_codelab_10_publishing"
+              }
+            ]
+          },
+          {
+            "title": "Samples",
+            "href": "/apps/samples"
+          },
+          {
+            "title": "Develop in the Cloud",
+            "href": "/apps/offline_apps",
+      "items": [
+              {
+                "title": "Offline First",
+                "href": "/apps/offline_apps"
+              },
+              {
+                "title": "Handling External Content",
+                "href": "/apps/app_external"
+              },
+              {
+                "title": "Storing Data",
+                "href": "/apps/app_storage"
+              },
+              {
+                "title": "Cloud Messaging",
+                "href": "/apps/cloudMessaging"
+              },
+              {
+                "title": "User Authentication",
+                "href": "/apps/app_identity"
+              }
+            ]
+          }, 
+          {
+            "title": "User Low-Level System Services",
+            "href": "/apps/app_usb",
+            "items": [
+              {
+                "title": "USB",
+                "href": "/apps/app_usb"
+              },
+              {
+                "title": "Serial",
+                "href": "/apps/app_serial"
+              },
+              {
+                "title": "Network Communications",
+                "href": "/apps/app_network"
+              }
+            ]
+          },
+          {
+            "title": "MVC Architecture & Frameworks",
+            "href": "/apps/app_frameworks",
+      "items": [
+              {
+                "title": "About MVC Architecture",
+                "href": "/apps/app_frameworks"
+              },
+              {
+                "title": "Build Apps with AngularJS",
+                "href": "/apps/angular_framework"
+              },
+              {
+                "title": "Build Apps with SenchaJS",
+                "href": "/apps/sencha_framework"
+              }
+            ]
+          },
+          {   
+            "title": "Distribute Apps",
+            "href": "/apps/publish_app",
+            "items": [
+              {
+                "title": "Publish Your App",
+                "href": "/apps/publish_app"
+              },
+              {
+                "title": "Monetize Your App",
+                "href": "/apps/google_wallet"
+              },
+              {
+                "title": "Analytics",
+                "href": "/apps/analytics"
+              }
+            ]
+          },
+          {
+            "title": "Reference",
+            "href": "/apps/api_index",
+            "items": [
+              {
+                "title": "Chrome Platform APIs",
+                "href": "/apps/api_index"
+              },
+              {
+                "title": "Webview Tag",
+                "href": "/apps/tags/webview"
+              },
+              {
+                "title": "Web APIs",
+                "href": "/apps/api_other"
+              },
+              {
+                "title": "Manifest File Format",
+                "href": "/apps/manifest"
+              },
+              {
+                "title": "Disabled Web Features",
+                "href": "/apps/app_deprecated"
+              }
+            ]
+          },
+          {
+            "title": "Help",
+            "href": "/apps/faq",
+            "items": [
+              {
+                "title": "FAQ",
+                "href": "/apps/faq"
+              },
+              {
+                "title": "Google Groups",
+                "href": "https://groups.google.com/a/chromium.org/forum/#!forum/chromium-apps"
+              },
+              {
+                "title": "Stack Overflow",
+                "href": "http://stackoverflow.com/questions/tagged/google-chrome-app"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Extensions",
+        "items": [
+          {
+            "title": "Learn Basics",
+            "href": "/extensions/overview",
+            "items": [
+              {
+                "title": "Overview",
+                "href": "/extensions/overview"
+              },              
+              {
+                "title": "Event Pages",
+                "href": "/extensions/event_pages"
+              },
+              {
+                "title": "Content Scripts",
+                "href": "/extensions/content_scripts"
+              },
+              {
+                "title": "activeTab Permission",
+                "href": "/extensions/activeTab"
+              }
+            ]
+          },
+          {
+            "title": "Getting Started Tutorial",
+            "href": "/extensions/getstarted"
+          },
+          {
+            "title": "Samples",
+            "href": "/extensions/samples"
+          },
+          {
+            "title": "Develop Extensions",
+            "href": "/extensions/tut_migration_to_manifest_v2",
+            "items": [
+              {
+                "title": "Accessibility",
+                "href": "/extensions/a11y"
+              },
+              {
+                "title": "Content Security Policy",
+                "href": "/extensions/contentSecurityPolicy"
+              },
+              {
+                "title": "Cross-Origin XHR",
+                "href": "/extensions/xhr"
+              },
+              {
+                "title": "Debugging",
+                "href": "/extensions/tut_debugging"
+              },
+              {
+                "title": "Internationalization",
+                "href": "/extensions/i18n"
+              },
+              {
+                "title": "Message Passing",
+                "href": "/extensions/messaging"
+              },
+              {
+                "title": "Migrate to Manifest 2",
+                "href": "/extensions/tut_migration_to_manifest_v2"
+              },
+              {
+                "title": "OAuth",
+                "href": "/extensions/tut_oauth"
+              }
+            ]
+          },
+          {
+            "title": "Distribute Extensions",
+            "href": "/extensions/hosting",
+            "items": [
+              {
+                "title": "Hosting",
+                "href": "/extensions/hosting"
+              },
+              {
+                "title": "Packaging",
+                "href": "/extensions/packaging"
+              },
+              {
+                "title": "Autoupdating",
+                "href": "/extensions/autoupdate"
+              },
+              {
+                "title": "Other Deployment Options",
+                "href": "/extensions/external_extensions"
+              },
+              {
+                "title": "Google Analytics",
+                "href": "/extensions/tut_analytics"
+              },
+              {
+                "title": "Publishing Themes",
+                "href": "/extensions/themes"
+              }
+            ]
+          },
+          {
+            "title": "Reference",
+            "href": "/extensions/api_index",
+            "items": [
+              {
+                "title": "What's New?",
+                "href": "/extensions/whats_new"
+              },
+              {
+                "title": "Chrome Platform APIs",
+                "href": "/extensions/api_index"
+              },
+              {
+                "title": "Web APIs",
+                "href": "/extensions/api_other"
+              },
+              {
+                "title": "Manifest File Format",
+                "href": "/extensions/manifest"
+              },
+              {
+                "title": "Permission Warnings",
+                "href": "/extensions/permission_warnings"
+              },
+              {
+                "title": "Optional Permissions",
+                "href": "/extensions/permissions"
+              },
+              {
+                "title": "Match Patterns",
+                "href": "/extensions/match_patterns"
+              }
+            ]
+          },
+          {
+            "title": "Help",
+            "href": "/extensions/faq",
+            "items": [
+              {
+                "title": "FAQ",
+                "href": "/extensions/faq"
+              },
+              {  
+                "title": "Google Groups",
+                "href": "https://groups.google.com/a/chromium.org/forum/#!forum/chromium-extensions"
+              },
+              {
+                "title": "Stack Overflow",
+                "href": "http://stackoverflow.com/tags/google-chrome-extension/info"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

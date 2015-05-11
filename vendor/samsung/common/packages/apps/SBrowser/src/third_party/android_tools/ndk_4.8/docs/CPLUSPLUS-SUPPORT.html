@@ -1,0 +1,183 @@
+<h1>C++ support with the Android NDK</h1>
+<p>The Android platform provides a very minimal C++ runtime support library
+(/system/lib/libstdc++) and corresponding headers for it in the NDK.</p>
+<p>By default, this 'system' runtime does <em>not</em> provide the following:</p>
+<ul>
+<li>Standard C++ Library support (except a few trivial headers).</li>
+<li>C++ exceptions support</li>
+<li>RTTI support</li>
+</ul>
+<p>However, the NDK provides various "helper C++ runtimes" which can provide them,
+or a subset of these features.</p>
+<p>To select the runtime you want to use, define <code>APP_STL</code> inside your
+Application.mk to one of the following values:</p>
+<pre><code>    system          -&gt; Use the default minimal system C++ runtime library.
+    gabi++_static   -&gt; Use the GAbi++ runtime as a static library.
+    gabi++_shared   -&gt; Use the GAbi++ runtime as a shared library.
+    stlport_static  -&gt; Use the STLport runtime as a static library.
+    stlport_shared  -&gt; Use the STLport runtime as a shared library.
+    gnustl_static   -&gt; Use the GNU STL as a static library.
+    gnustl_shared   -&gt; Use the GNU STL as a shared library.
+</code></pre>
+<p>The 'system' runtime is the default if there is no <code>APP_STL</code> definition in
+your Application.mk. As an example, to use the static GNU STL, add a line like:</p>
+<pre><code>    APP_STL := gnustl_static
+</code></pre>
+<p>To your Application.mk. You can only select a single C++ runtime that all
+your code will depend on. It is not possible to mix shared libraries compiled
+against different C++ runtimes.</p>
+<p>IMPORTANT: Defining <code>APP_STL</code> in Android.mk has no effect!</p>
+<p>If you are not using the NDK build system, you can still use the GNU STL,
+see <a href="STANDALONE-TOOLCHAIN.html">STANDALONE-TOOLCHAIN</a> for more details.</p>
+<p>The capabilities of the various runtimes vary. See this table:</p>
+<pre><code>                C++       C++   Standard
+              Exceptions  RTTI    Library
+
+    system        no       no        no
+    gabi++       yes      yes        no
+    stlport      yes      yes       yes
+    gnustl       yes      yes       yes
+</code></pre>
+<h1></h1>
+<hr />
+<h2>I. Runtimes overview:</h2>
+<h3>I.1. System runtime:</h3>
+<p>The system runtime only provides a very small number of C++ standard headers.</p>
+<p>This corresponds to the actual C++ runtime provided by the Android platform.
+If you use it, your C++ binaries will automatically be linked against the
+system libstdc++.</p>
+<p>The only headers provided here are the following:</p>
+<pre><code>    cassert cctype cerrno cfloat climits cmath csetjmp csignal cstddef
+    cstdint cstdio cstdlib cstring ctime cwchar new stl_pair.h typeinfo
+    utility
+</code></pre>
+<p>Anything else is <em>not</em> supported, including std::string or std::vector.</p>
+<h3>I.2. GAbi++ runtime:</h3>
+<p>This is a new minimalistic runtime that provides the same headers than
+the system one, with the addition of RTTI (RunTime Type Information) and
+exception handling support.</p>
+<p>If you insist on using it, read the "RTTI Support" and
+"Static runtime considerations" sections below.</p>
+<h3>I.3. STLport runtime:</h3>
+<p>This is a port of STLport (http://www.stlport.org) that can be used on
+Android. It will provide you with a complete set of C++ standard library
+headers, with RTTI and exception handling support.</p>
+<p>That's because the library embeds its own copy of GAbi++.</p>
+<p>Available as both both static and shared libraries. To use it, use either
+one of these two lines in your Application.mk:</p>
+<pre><code>  `APP_STL` := stlport_shared
+  `APP_STL` := stlport_static
+</code></pre>
+<p>Note that 'stlport_shared' is preferred, for reasons explained in
+"Static runtime considerations".</p>
+<h3>I.4. GNU STL runtime:</h3>
+<p>This is the GNU Standard C++ Library (a.k.a. libstdc++-v3), providing the
+more features. Note that the shared library file is named "libgnustl_shared.so"
+instead of "libstdc++.so" as on other platforms.</p>
+<p>If you want to use it, please read the "C++ Exceptions support",
+"RTTI Support" and "Static runtime considerations" sections below.</p>
+<hr />
+<h2>II. Important Considerations:</h2>
+<h3>II.1. C++ Exceptions support:</h3>
+<p>The NDK toolchain supports C++ exceptions, since NDK r5, however all C++
+sources are compiled with <code>-fno-exceptions</code> support by default, for
+compatibility reasons with previous releases.</p>
+<p>To enable it, use the new <code>LOCAL_CPP_FEATURES</code> variable in your Android.mk,
+as in:</p>
+<pre><code>    LOCAL_CPP_FEATURES += exceptions
+</code></pre>
+<p>See <a href="ANDROID-MK.html">ANDROID-MK</a> for more details about this variable.</p>
+<p>Another way to do the same is to define it in your <code>LOCAL_CPPFLAGS</code> definition
+(but using <code>LOCAL_CPP_FEATURES</code> is preferred), as in:</p>
+<pre><code>    LOCAL_CPPFLAGS += -fexceptions
+</code></pre>
+<p>More simply, add a single line to your Application.mk, the setting will
+automatically apply to all your project's NDK modules:</p>
+<pre><code>    APP_CPPFLAGS += -fexceptions
+</code></pre>
+<p>IMPORTANT: You <em>will</em> have to select a C++ runtime that supports
+           exceptions to be able to link / run your code.</p>
+<h3>II.2. RTTI support:</h3>
+<p>Similarly, the NDK toolchain supports C++ RTTI (RunTime Type Information)
+since NDK r5, but all C++ sources are built with <code>-fno-rtti</code> by default for
+compatibility reasons. To enable it, add the following to your module
+declarations:</p>
+<pre><code>    LOCAL_CPP_FEATURES += rtti
+</code></pre>
+<p>This will be equivalent to:</p>
+<pre><code>    LOCAL_CPPFLAGS += -frtti
+</code></pre>
+<p>Or more simply to your Application.mk:</p>
+<pre><code>    APP_CPPFLAGS += -frtti
+</code></pre>
+<h3>II.3. Static runtimes:</h3>
+<p>Please keep in mind that the static library variant of a given C++ runtime
+SHALL ONLY BE LINKED INTO A SINGLE BINARY for optimal conditions.</p>
+<p>What this means is that if your project consists of a single shared
+library, you can link against, e.g., stlport_static, and everything will
+work correctly.</p>
+<p>On the other hand, if you have two shared libraries in your project
+(e.g. libfoo.so and libbar.so) which both link against the same static
+runtime, each one of them will  include a copy of the runtime's code in
+its final binary image. This is problematic because certain global
+variables used/provided internally by the runtime are duplicated.</p>
+<p>This is likely to result in code that doesn't work correctly, for example:</p>
+<ul>
+<li>
+<p>memory allocated in one library, and freed in the other would leak
+    or even corrupt the heap.</p>
+</li>
+<li>
+<p>exceptions raised in libfoo.so cannot be caught in libbar.so (and may
+    simply crash the program).</p>
+</li>
+<li>
+<p>the buffering of std::cout not working properly</p>
+</li>
+</ul>
+<p>This problem also happens if you want to link an executable and a shared
+library to the same static library.</p>
+<p>In other words, if your project requires several shared library modules,
+then use the shared library variant of your C++ runtime.</p>
+<h3>II.4. Shared runtimes:</h3>
+<p>If you use the shared library variant of a given C++ runtime, keep in mind
+that you must load it before any library that depends on it when your
+application starts.</p>
+<p>As an example, let's consider the case where we have the following modules</p>
+<ul>
+<li>libfoo.so</li>
+<li>libbar.so which is used by libfoo.so</li>
+<li>libstlport_shared.so, used by both libfoo and libbar</li>
+</ul>
+<p>You will need to load the libraries in reverse dependency order, as in:</p>
+<pre><code>    static {
+      System.loadLibrary("stlport_shared");
+      System.loadLibrary("bar");
+      System.loadLibrary("foo");
+    }
+</code></pre>
+<p>Note that you shouldn't use the 'lib' prefix when calling
+System.loadLibrary(), unless you specify the full path as in:</p>
+<pre><code>System.loadLibrary("/path/to/libstlport_shared.so")
+</code></pre>
+<p>Which is not recommended, since this hard-codes the path in your code.</p>
+<hr />
+<h2>III. EXTRAS:</h2>
+<h3>III.1. STLport-specific issues:</h3>
+<p>This NDK provides prebuilt static and shared libraries for STLport,
+but you can force it to be rebuilt from sources by defining the following
+in your environment or your Application.mk before building:</p>
+<pre><code>STLPORT_FORCE_REBUILD := true
+</code></pre>
+<p>STLport is licensed under a BSD-style open-source license. See
+sources/cxx-stl/stlport/README for more details about the library.</p>
+<h3>III.2. GNU libstdc++ license is GPLv3 + linking exception!</h3>
+<p>Be aware that the GNU libstdc++ is covered by the GPLv3 license (and <em>not</em>
+the LGPLv2 or LGPLv3 as some assume), full details available here:</p>
+<pre><code>&lt;http://gcc.gnu.org/onlinedocs/libstdc++/manual/license.html&gt;
+</code></pre>
+<p>Be sure that you comply with all clauses of this license.</p>
+<h3>IV. Future Plans:</h3>
+<ul>
+<li>uSTL support?</li>
+</ul>

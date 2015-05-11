@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html i18n-values="dir:textdirection">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,
+                                 maximum-scale=1.0, user-scalable=no">
+  <title i18n-content="title"></title>
+  <link rel="stylesheet" href="neterror_usa.css">
+  <script src="neterror_usa.js"></script>
+</head>
+<body id="t">
+    <div id="main-frame-error">
+        <div id="box">
+            <div id="content-top">
+                <div><h1>No se puede mostrar la página web</h1></div>
+                <div>
+                    Su dispositivo móvil no está conectado a la red. Utilice los siguientes enlaces para obtener más información sobre posibles sol.
+                </div><br>
+
+                <div class="lineHeight">
+                    <li><a onclick="toggleHelpBox1()">Revisar el estado de la red</a></li>
+                    <li><a onclick="toggleHelpBox2()">Conectarse a red móvil</a></li>
+                    <li><a onclick="toggleHelpBox3()">Conectar a red Wi-Fi</a></li>
+                    <li><a onclick="toggleHelpBox4()">Comprobar tarjeta SIM</a></li>
+                </div>
+            </div> <!--content-top-->
+
+            <!-- Outer and inner divs are needed both for margins and sizing. -->
+            <div id="help-box-outer1" class="hidden">
+                <div id="help-box-inner">
+                    <div><h1>Revisar el estado de la red</h1></div>
+                    <div>
+                        Para conectarse a internet es necesario que su dispositivo se encuentre en rango de la red móvil ó Wi-Fi. La barra de estado provee información sobre intensidad de la señal recibida en el dispositivo y su estado de conexión.
+                    </div>
+                </div>
+            </div>
+
+            <div id="help-box-outer2" class="hidden">
+                <div id="help-box-inner">
+                    <div><h1>Conectarse a red móvil</h1></div>
+                    <div>
+                        Para conectarse mediante su red de datos, deben activarse los datos móviles.
+                    </div><br>
+                    <div>
+                        En su teléfono, vaya a Ajustes > Conexiones > Más redes > Redes móviles y active Datos móviles.
+                    </div><br>
+                    <div>
+                        En su tableta, vaya a Ajustes > Más ajustes > Redes móviles y active Datos móviles.
+                    </div>
+                </div>
+            </div>
+
+            <div id="help-box-outer3" class="hidden">
+                <div id="help-box-inner">
+                    <div><h1>Conectar a red Wi-Fi</h1></div>
+                    <div>
+                        Para conectarse mediante una red Wi-Fi, debe estar activada la opción Wi-Fi.
+                    </div><br>
+                    <div>
+                        En su teléfono, vaya a Ajustes > Conexiones y active la Wi-Fi. Luego seleccione una red inalámbrica para conectarse.
+                    </div><br>
+                    <div>
+                        En su tableta, vaya a Ajustes y active la Wi-Fi. Luego seleccione una red inalámbrica para conectarse.
+                    </div>
+                </div>
+            </div>
+
+            <div id="help-box-outer4" class="hidden">
+                <div id="help-box-inner">
+                    <div><h1>Comprobar tarjeta SIM</h1></div>
+                    <div>
+                        Si no se ha insertado correctamente su tarjeta SIM, su dispositivo no podrá conectarse a la red móvil.
+                    </div><br>
+                    <div>
+                        Retire la cubierta posterior, y extraiga la batería y la tarjeta SIM. Vuelva a insertar la tarjeta SIM con el contacto dorado hacia abajo. Presione la tarjeta SIM con firmeza en la ranura hasta que encaje perfectamente.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,436 @@
+[
+    {
+        "name": "common",
+        "dependencies": [],
+        "sources": [
+            "modules.js",
+            "Color.js",
+            "DOMExtension.js",
+            "Geometry.js",
+            "ModuleManager.js",
+            "Object.js",
+            "ParsedURL.js",
+            "Platform.js",
+            "Progress.js",
+            "Settings.js",
+            "TextRange.js",
+            "UIString.js",
+            "UserMetrics.js",
+            "utilities.js"
+        ]
+    },
+    {
+        "name": "sdk",
+        "dependencies": ["common"],
+        "sources": [
+            "ApplicationCacheModel.js",
+            "CompilerScriptMapping.js",
+            "ConsoleModel.js",
+            "ContentProvider.js",
+            "ContentProviderBasedProjectDelegate.js",
+            "ContentProviders.js",
+            "CookieParser.js",
+            "CPUProfilerModel.js",
+            "CSSMetadata.js",
+            "CSSStyleModel.js",
+            "CSSStyleSheetMapping.js",
+            "BreakpointManager.js",
+            "Database.js",
+            "DOMAgent.js",
+            "DOMStorage.js",
+            "DebuggerModel.js",
+            "DebuggerScriptMapping.js",
+            "FileManager.js",
+            "FileSystemMapping.js",
+            "FileSystemModel.js",
+            "FileSystemProjectDelegate.js",
+            "FileUtils.js",
+            "HAREntry.js",
+            "IndexedDBModel.js",
+            "InspectorBackend.js",
+            "IsolatedFileSystemManager.js",
+            "IsolatedFileSystem.js",
+            "Linkifier.js",
+            "NetworkLog.js",
+            "NetworkUISourceCodeProvider.js",
+            "NotificationService.js",
+            "OverridesSupport.js",
+            "PresentationConsoleMessageHelper.js",
+            "WorkerManager.js",
+            "RuntimeModel.js",
+            "SASSSourceMapping.js",
+            "Script.js",
+            "ScriptFormatter.js",
+            "ScriptSnippetModel.js",
+            "SimpleWorkspaceProvider.js",
+            "SnippetStorage.js",
+            "SourceMapping.js",
+            "StylesSourceMapping.js",
+            "TempFile.js",
+            "TimelineManager.js",
+            "RemoteObject.js",
+            "Resource.js",
+            "DefaultScriptMapping.js",
+            "ResourceScriptMapping.js",
+            "LiveEditSupport.js",
+            "ResourceTreeModel.js",
+            "ResourceType.js",
+            "ResourceUtils.js",
+            "SourceMap.js",
+            "TracingAgent.js",
+            "NetworkManager.js",
+            "NetworkRequest.js",
+            "UISourceCode.js",
+            "Workspace.js",
+            "WorkspaceController.js",
+            "PaintProfiler.js"
+        ]
+    },
+    {
+        "name": "ui",
+        "dependencies": ["common"],
+        "sources": [
+            "Checkbox.js",
+            "ContextMenu.js",
+            "CompletionDictionary.js",
+            "DataGrid.js",
+            "Dialog.js",
+            "DockController.js",
+            "Drawer.js",
+            "EmptyView.js",
+            "FilterBar.js",
+            "GoToLineDialog.js",
+            "HelpScreen.js",
+            "InplaceEditor.js",
+            "InspectorView.js",
+            "KeyboardShortcut.js",
+            "OverviewGrid.js",
+            "Panel.js",
+            "Placard.js",
+            "Popover.js",
+            "ProgressIndicator.js",
+            "PropertiesSection.js",
+            "SearchableView.js",
+            "Section.js",
+            "SettingsUI.js",
+            "SidebarOverlay.js",
+            "SidebarPane.js",
+            "SidebarTreeElement.js",
+            "ShortcutsScreen.js",
+            "ShowMoreDataGridNode.js",
+            "SoftContextMenu.js",
+            "Spectrum.js",
+            "SplitView.js",
+            "StackView.js",
+            "StatusBarButton.js",
+            "SuggestBox.js",
+            "TabbedPane.js",
+            "TextEditor.js",
+            "TextPrompt.js",
+            "TextUtils.js",
+            "TimelineGrid.js",
+            "UIUtils.js",
+            "View.js",
+            "ViewportControl.js",
+            "ZoomManager.js",
+            "treeoutline.js"
+        ]
+    },
+    {
+        "name": "codemirror",
+        "dependencies": ["common", "ui"],
+        "sources": [
+            "CodeMirrorTextEditor.js",
+            "CodeMirrorUtils.js"
+        ]
+    },
+    {
+        "name": "components",
+        "dependencies": ["sdk", "ui"],
+        "sources": [
+            "AdvancedSearchController.js",
+            "HandlerRegistry.js",
+            "ConsoleMessage.js",
+            "CookiesTable.js",
+            "DOMBreakpointsSidebarPane.js",
+            "DOMPresentationUtils.js",
+            "ExtensionServerProxy.js",
+            "FlameChart.js",
+            "HelpScreenUntilReload.js",
+            "NativeBreakpointsSidebarPane.js",
+            "InspectElementModeController.js",
+            "ObjectPopoverHelper.js",
+            "ObjectPropertiesSection.js",
+            "ScreencastView.js"
+        ]
+    },
+    {
+        "name": "source_frame",
+        "dependencies": ["components", "codemirror"],
+        "sources": [
+            "SourceFrame.js"
+        ]
+    },
+    {
+        "name": "resource_views",
+        "dependencies": ["source_frame"],
+        "sources": [
+            "FontView.js",
+            "ImageView.js",
+            "ResourceView.js"
+        ]
+    },
+    {
+        "name": "elements",
+        "dependencies": ["components", "codemirror"],
+        "sources": [
+            "DOMSyntaxHighlighter.js",
+            "ElementsPanel.js",
+            "ElementsTreeOutline.js",
+            "EventListenersSidebarPane.js",
+            "MetricsSidebarPane.js",
+            "OverridesView.js",
+            "PlatformFontsSidebarPane.js",
+            "PropertiesSidebarPane.js",
+            "StylesSidebarPane.js",
+            "RenderingOptionsView.js"
+        ]
+    },
+    {
+        "name": "network",
+        "dependencies": ["components", "resource_views"],
+        "sources": [
+            "NetworkItemView.js",
+            "RequestCookiesView.js",
+            "RequestHeadersView.js",
+            "RequestHTMLView.js",
+            "RequestJSONView.js",
+            "RequestPreviewView.js",
+            "RequestResponseView.js",
+            "RequestTimingView.js",
+            "RequestView.js",
+            "ResourceWebSocketFrameView.js",
+            "NetworkPanel.js"
+        ]
+    },
+    {
+        "name": "resources",
+        "dependencies": ["components", "resource_views"],
+        "sources": [
+            "ApplicationCacheItemsView.js",
+            "CookieItemsView.js",
+            "DatabaseQueryView.js",
+            "DatabaseTableView.js",
+            "DirectoryContentView.js",
+            "DOMStorageItemsView.js",
+            "FileContentView.js",
+            "FileSystemView.js",
+            "IndexedDBViews.js",
+            "ResourcesPanel.js"
+        ]
+    },
+    {
+        "name": "workers",
+        "dependencies": ["components"],
+        "sources": [
+            "WorkerFrontendManager.js"
+        ]
+    },
+    {
+        "name": "sources",
+        "dependencies": ["components", "source_frame", "workers"],
+        "sources": [
+            "BreakpointsSidebarPane.js",
+            "CSSSourceFrame.js",
+            "CallStackSidebarPane.js",
+            "EditingLocationHistoryManager.js",
+            "FilePathScoreFunction.js",
+            "FilteredItemSelectionDialog.js",
+            "JavaScriptSourceFrame.js",
+            "NavigatorView.js",
+            "RevisionHistoryView.js",
+            "ScopeChainSidebarPane.js",
+            "SimpleHistoryManager.js",
+            "SourcesNavigator.js",
+            "SourcesPanel.js",
+            "SourcesSearchScope.js",
+            "StyleSheetOutlineDialog.js",
+            "TabbedEditorContainer.js",
+            "UISourceCodeFrame.js",
+            "WatchExpressionsSidebarPane.js",
+            "WorkersSidebarPane.js",
+            "ThreadsToolbar.js"
+        ]
+    },
+    {
+        "name": "console",
+        "dependencies": ["components"],
+        "sources": [
+            "ConsoleView.js",
+            "ConsolePanel.js"
+        ]
+    },
+    {
+        "name": "timeline",
+        "dependencies": ["components"],
+        "sources": [
+            "CountersGraph.js",
+            "MemoryStatistics.js",
+            "PieChart.js",
+            "TimelineEventOverview.js",
+            "TimelineFrameModel.js",
+            "TimelineFrameOverview.js",
+            "TimelineMemoryOverview.js",
+            "TimelineModel.js",
+            "TimelineOverviewPane.js",
+            "TimelineFlameChart.js",
+            "TimelinePanel.js",
+            "TimelinePresentationModel.js",
+            "TimelineView.js"
+        ]
+    },
+    {
+        "name": "audits",
+        "dependencies": ["components"],
+        "sources": [
+            "AuditCategories.js",
+            "AuditCategory.js",
+            "AuditController.js",
+            "AuditFormatters.js",
+            "AuditLauncherView.js",
+            "AuditResultView.js",
+            "AuditRules.js",
+            "AuditsPanel.js"
+        ]
+    },
+    {
+        "name": "layers",
+        "dependencies": ["components"],
+        "sources": [
+            "LayerTreeModel.js",
+            "LayersPanel.js",
+            "LayerTree.js",
+            "Layers3DView.js",
+            "LayerDetailsView.js",
+            "PaintProfilerView.js"
+        ]
+    },
+    {
+        "name": "extensions",
+        "dependencies": ["components", "audits", "sources"],
+        "sources": [
+            "ExtensionAPI.js",
+            "ExtensionAuditCategory.js",
+            "ExtensionPanel.js",
+            "ExtensionRegistryStub.js",
+            "ExtensionServer.js",
+            "ExtensionView.js"
+        ]
+    },
+    {
+        "name": "settings",
+        "dependencies": ["components"],
+        "sources": [
+            "SettingsScreen.js",
+            "EditFileSystemDialog.js"
+        ]
+    },
+    {
+        "name": "tests",
+        "dependencies": ["components"],
+        "sources": [
+            "TestController.js"
+        ]
+    },
+    {
+        "name": "temp_storage_shared_worker",
+        "standalone": true,
+        "dependencies": [],
+        "sources": [
+            "TempStorageSharedWorker.js"
+        ]
+    },
+    {
+        "name": "profiler",
+        "dependencies": ["components"],
+        "sources": [
+            "BottomUpProfileDataGridTree.js",
+            "CPUProfileView.js",
+            "HeapSnapshotCommon.js",
+            "HeapSnapshotDataGrids.js",
+            "HeapSnapshotGridNodes.js",
+            "HeapSnapshotProxy.js",
+            "HeapSnapshotView.js",
+            "ProfileDataGridTree.js",
+            "ProfilesPanel.js",
+            "ProfileLauncherView.js",
+            "TopDownProfileDataGridTree.js",
+            "CanvasProfileView.js",
+            "CanvasReplayStateView.js"
+        ]
+    },
+    {
+        "name": "heap_snapshot_worker",
+        "standalone": true,
+        "dependencies": [],
+        "sources": [
+            "AllocationProfile.js",
+            "HeapSnapshot.js",
+            "HeapSnapshotCommon.js",
+            "HeapSnapshotLoader.js",
+            "HeapSnapshotWorker.js",
+            "HeapSnapshotWorkerDispatcher.js",
+            "JSHeapSnapshot.js",
+            "TextUtils.js",
+            "UIString.js",
+            "utilities.js"
+        ]
+    },
+    {
+        "name": "host_stub",
+        "dependencies": ["components", "profiler", "timeline"],
+        "sources": [
+            "InspectorFrontendAPI.js",
+            "InspectorFrontendHostStub.js"
+        ]
+    },
+    {
+        "name": "script_formatter_worker",
+        "standalone": true,
+        "dependencies": [],
+        "sources": [
+            "CSSFormatter.js",
+            "JavaScriptFormatter.js",
+            "ScriptFormatterWorker.js",
+            "utilities.js"
+        ]
+    },
+    {
+        "name": "front_end",
+        "standalone": true,
+        "dependencies": [
+            "common",
+            "sdk",
+            "ui",
+            "codemirror",
+            "components",
+            "source_frame",
+            "resource_views",
+            "elements",
+            "network",
+            "resources",
+            "workers",
+            "sources",
+            "console",
+            "timeline",
+            "audits",
+            "layers",
+            "extensions",
+            "settings",
+            "tests",
+            "profiler",
+            "host_stub"
+        ],
+        "sources": []
+    }
+]

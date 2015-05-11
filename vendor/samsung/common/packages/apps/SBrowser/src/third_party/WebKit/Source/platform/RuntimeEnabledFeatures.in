@@ -1,0 +1,141 @@
+// http://dev.chromium.org/blink/runtime-enabled-features
+//
+// This list is used to generate RuntimeEnabledFeatures.h/cpp which contains
+// a class that stores static enablers for all experimental features.
+//
+// Each feature can be assigned a "status":
+// status=stable -> Enable this in all Blink configurations.  We are committed to these APIs indefinitely.
+// status=experimental -> In-progress features, Web Developers might play with, but are not on by default in stable.
+// status=test -> Enabled in ContentShell for testing, otherwise off.
+// Features without a status are not enabled anywhere by default.
+//
+// "stable" features listed here should be rare, as anything which we've shipped stable
+// can have its runtime flag removed soon after.
+//
+// condition=ENABLE_NAME is used for wrapping features in compile-time
+// #if ENABLE(FEATURE) guards.  These are deprecated and should all be removed.
+
+ApplicationCache status=stable
+AuthorShadowDOMForAnyElement
+BeforeLoad status=test
+ClientHintsDpr status=experimental
+Crypto status=experimental
+CSSAnimationUnprefixed status=experimental
+CSSCompositing status=experimental
+CSSExclusions status=experimental
+CSSGridLayout status=experimental
+CSSMaskSourceType status=experimental
+CSSOMSmoothScroll status=experimental
+CSSShapes status=experimental, force=enable
+CSSStickyPosition status=experimental
+CSSTouchAction status=experimental
+CSSTouchActionDelay status=test
+CSSViewport status=experimental
+CSS3Text status=experimental
+CSS3TextDecorations status=experimental
+//S_HTML5_CUSTOM_HANDLER_SUPPORT - START
+CustomSchemeHandler depends_on=NavigatorContentUtils, status=experimental, force=enable
+CustomContentHandler depends_on=NavigatorContentUtils, status=experimental, force=enable
+//S_HTML5_CUSTOM_HANDLER_SUPPORT - END
+Database status=stable
+DeviceMotion status=stable
+DeviceOrientation status=stable
+DialogElement status=experimental, force=enable
+DirectWrite
+EncodingAPI status=experimental
+EncryptedMedia status=experimental
+EncryptedMediaAnyVersion status=stable
+ExperimentalCanvasFeatures status=test, force=enable
+ExperimentalContentSecurityPolicyFeatures status=experimental
+ExperimentalWebSocket status=test
+FileConstructor status=experimental
+FileSystem status=stable
+FontLoadEvents status=experimental
+Fullscreen status=stable
+FastTextAutosizing
+Gamepad status=stable
+Geolocation status=stable
+HTMLImports status=test
+HighResolutionTimeInWorkers status=stable
+IMEAPI status=experimental
+IndexedDBExperimental status=experimental
+InputModeAttribute status=test
+InputTypeDateTime status=stable, force=enable
+LangAttributeAwareFormControlUI
+PrefixedEncryptedMedia status=stable
+LocalStorage status=stable
+Media status=stable
+MediaSource status=stable
+MediaSourceExperimental depends_on=MediaSource, status=experimental
+MediaStream status=stable
+//S_HTML5_CUSTOM_HANDLER_SUPPORT - START
+NavigatorContentUtils status=stable
+//S_HTML5_CUSTOM_HANDLER_SUPPORT - END
+Notifications status=stable, force=enable
+ObjectFitPosition status=stable
+OrientationEvent force=enable
+// Only enabled on Android, and for certain layout tests on Linux.
+OverlayFullscreenVideo force=enable
+PagePopup status=stable, force=disable
+PartialLayout status=experimental
+//Canvas Path Feature for HtML5 score
+Path2D status=stable
+PathOpsSVGClipping
+PeerConnection depends_on=MediaStream, status=stable
+// Implementation of this feature varies by platform for now.
+// Bug to track removal once completed everywhere:
+//   http://crbug.com/308649
+PointerEventsMaxTouchPoints status=experimental
+Quota status=stable
+QuotaPromise status=experimental
+OverlayScrollbars force=enable
+RegionBasedColumns status=experimental
+
+// This is implementation flag for the re-write of the layout/paint system to
+// do painting after we have completed layout, instead of piecemeal during layout.
+RepaintAfterLayout
+
+RequestAutocomplete status=test, force=enable
+ScreenOrientation status=test
+PrefixedScreenOrientation status=stable
+ScriptedSpeech status=stable, force=no
+
+// Implements documentElement.scrollTop/Left and bodyElement.scrollTop/Left
+// as per the spec, matching other Web engines.
+ScrollTopLeftInterop status=experimental
+
+PushRegistration condition=PUSH_API, status=stable
+ServiceWorker status=experimental
+SessionStorage status=stable
+ShadowDOM status=experimental
+SharedWorker status=stable, force=disable
+SpeechInput status=stable
+SpeechSynthesis status=stable
+Srcset status=stable
+Stream status=experimental
+StyleScoped status=experimental, force=disable
+SubpixelFontScaling status=experimental
+SVGPaintOrder status=experimental
+
+// Enable optimizations to recalculate style on the fewest possible number of
+// elements when updating classes, ids or attributes of DOM elements.
+TargetedStyleRecalc
+
+// Many websites disable mouse support when touch APIs are available.  We'd
+// like to enable this always but can't until more websites fix this bug.
+// Chromium sets this conditionally (eg. based on the presence of a
+// touchscreen) in ApplyWebPreferences.
+Touch status=stable
+
+TouchIconLoading status=stable
+UserSelectAll status=experimental
+VideoTrack depends_on=Media, status=stable
+WebAnimationsSVG
+WebAnimationsAPI status=experimental
+WebAudio condition=WEB_AUDIO, status=stable
+WebGLDraftExtensions status=experimental
+WebMIDI status=test
+WebKitMediaSource status=stable
+WebVTTRegions depends_on=VideoTrack, status=experimental
+WOFF2 status=experimental
+XSLT status=stable

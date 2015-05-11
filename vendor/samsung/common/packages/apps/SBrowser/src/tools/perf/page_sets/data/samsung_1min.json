@@ -1,0 +1,8 @@
+{
+    "description": "Describes the Web Page Replay archives for a page set. Don't edit by hand! Use record_wpr for updating.", 
+    "archives": {
+        "samsung_1min_000.wpr": [
+            "http://december.com/html/demo/hello.html"
+        ]
+    }
+}

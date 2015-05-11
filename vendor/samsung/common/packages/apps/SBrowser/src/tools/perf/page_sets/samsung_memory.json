@@ -1,0 +1,16 @@
+{
+  "description": "Samsung-supplied memory test sites",
+  "archive_data_file": "data/samsung_memory.json",
+  "user_agent_type": "mobile",
+  "pages": [
+    {
+      "url": "http://m.naver.com",
+      "reload_and_gc": [
+        {"action": "reload" },
+        {"action": "wait", "seconds": 10 },
+        {"action": "js_collect_garbage" }
+      ],
+      "stress_memory": { "action": "reload_and_gc", "repeat": 1 }
+    }
+  ]
+}

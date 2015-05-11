@@ -1,0 +1,327 @@
+<h2><html><body><pre>Bionic ChangeLog:</h2>
+<hr />
+<p>Differences between Android 2.3 and Android 2.2:</p>
+<ul>
+<li>
+<p>&lt;pthread.h&gt;: Add reader/writer locks implementation. Add sanity
+  checking to pthread_mutex_destroy() (e.g. a locked mutex will return
+  EBUSY).</p>
+</li>
+<li>
+<p>&lt;semaphore.h&gt;: Use private futexes for semaphore implementation,
+  unless your set 'pshared' to non-0 when calling sem_init().</p>
+</li>
+</ul>
+<p>Also fixed a bug in sem_post() to make it wake up all waiting
+  threads, instead of one. As a consequence, the maximum semaphore
+  value is now reduced to 0x3fffffff.</p>
+<ul>
+<li>
+<p>&lt;math.h&gt;: Added sincos(), sincosf() and sincosl() (GLibc compatibility).</p>
+</li>
+<li>
+<p>&lt;sys/sysinfo.h&gt;: Added missing sysinfo() system call implementation
+  (the function was already declared in the header though).</p>
+</li>
+<li>
+<p>sysconf() didn't work for some arguments due to a small bug in the
+  /proc line parser.</p>
+</li>
+<li>
+<p>&lt;termio.h&gt;: added missing header (just includes &lt;termios.h&gt;)</p>
+</li>
+<li>
+<p>&lt;unistd.h&gt;: add missing declaration for truncate(). The implementation
+  was already here since Android 1.5.</p>
+</li>
+</ul>
+<p>modify implementation of alarm() to return 0 in case of error (i.e.
+  if a value larger than 0x7fffffff seconds is passed to it). This
+  makes the implementation compliant with the GLibc behaviour.</p>
+<ul>
+<li>
+<p>&lt;wchar.h&gt;: small fixes to really support wchar_t in Bionic (not there yet).</p>
+<p>the size of wchar_t is still 32-bit (decided by the compiler)</p>
+<p>WCHAR_MIN: changed from 0 to INT_MIN
+ WCHAR_MAX: changed from 255 to INT_MAX</p>
+<p>wcpcpy(), wcpncpy(), wcscat(), wcschr(), wcscmp(),
+ wcscpy(), wcscspn(), wcsdup(), wcslcat(), wcslcpy(),
+ wcslen(), wcsncat(), wcsncmp(), wcsncpy(), wcsnlen(),
+ wcspbrk(), wcsrchr(), wcsrchr(), wcsspn(), wcsstr(),
+ wcstok(), wcswidth(), wmemchr(), wmemcmp(), wmemcpy(),
+ wmemmove(), wmemset(): Added proper implementations.</p>
+<p>wcscasecmp(), wcsncasecmp(): Added implementation limited
+ to ASCII codes for lower/upper.</p>
+<p>wcscoll(): added dummy implementation that calls wcscmp()
+ wcsxfrm(): added dummy implementation that calls wcsncpy()</p>
+</li>
+</ul>
+<p>NOTE: Technically, this breaks the ABI, but we never claimed to support
+        wchar_t anyway. The wchar_t support is still <em>NOT</em> official at this
+        point. We need better multi-byte support code, and wprintf/wscanf
+        stuff too.</p>
+<ul>
+<li>
+<p>&lt;inttypes.h&gt;: add missing declarations for strntoimax abd strntoumax.</p>
+</li>
+<li>
+<p>&lt;stdlib.h&gt;: add missing declarations for drand48() and erand48().</p>
+</li>
+<li>
+<p>clearerr(): fix broken implementation.</p>
+</li>
+<li>
+<p>Feature test macros like _POSIX_C_SOURCE / _XOPEN_SOURCE / _C99_SOURCE
+  are now handled correctly by our C library headers (see &lt;sys/cdefs.h&gt;)</p>
+</li>
+<li>
+<p>&lt;sys/select.h&gt;: add missing declaration for pselect()</p>
+</li>
+<li>
+<p>&lt;sys/vfs.h&gt;: fixed implementation of fstatfs() (also fixes fpathconf()
+  which uses it).</p>
+</li>
+<li>
+<p>Added an implementation of pthread_atfork()</p>
+</li>
+<li>
+<p>&lt;dlfcn.h&gt;: fixed dlopen() implementation to support dlopen(NULL, ...).
+  This allows one to look at the dynamic symbols exported by an executable.</p>
+</li>
+<li>
+<p>&lt;private/bionic_tls.h&gt;: use kernel helper functions for static versions
+  of the C library. This is necessary because we don't know where the corresponding
+  machine code is going to run, and the optimization for __get_tls() might
+  not match the features of the target device where we run a static executable
+  linked to the C library. This fixes one of the bug that explains why gdbserver
+  didn't work well with threads.</p>
+</li>
+</ul>
+<hr />
+<p>Differences between Android 2.2. and Android 2.1:</p>
+<ul>
+<li>
+<p>Support FP register save/load in setjmp()/longjmp() on ARMv7 builds.</p>
+</li>
+<li>
+<p>Add support for SH-4 CPU architecture !</p>
+</li>
+<li>
+<p><code>__atomic_swap</code>(): use LDREX/STREX CPU instructions on ARMv6 and higher.</p>
+</li>
+<li>
+<p>&lt;arpa/telnet.h&gt;: New header (declarations only, no implementation).</p>
+</li>
+<li>
+<p>&lt;err.h&gt;: New header + implementation. GLibc compatibility.</p>
+</li>
+<li>
+<p>&lt;warn.h&gt;: New header + implementation. GLibc compatibility.</p>
+</li>
+<li>
+<p>&lt;fts.h&gt;: New header + implementation.</p>
+</li>
+<li>
+<p>&lt;mntent.h&gt;: Add missing &lt;stdio.h&gt; include.</p>
+</li>
+<li>
+<p>&lt;regex.h&gt;: New header + implementation.</p>
+</li>
+<li>
+<p>&lt;signal.h&gt;: Added killpg()</p>
+</li>
+<li>
+<p>&lt;stdint.h&gt;: Allow 64-bit type declarations on C99 builds.</p>
+</li>
+<li>
+<p>&lt;stdio.h&gt;: Add fdprintf() and vfdprintf(). Note that GLibc provides
+  the confusing 'dprintf' and 'vdprintf()' functions instead.</p>
+</li>
+<li>
+<p>&lt;stdlib.h&gt;: Fix ptsname_r(): the return type is int instead of char<em>.
+  The mistake comes from a GLibc man page bug (the man page listed a return
+  type of char</em>, while the implementation used int. Fixed in late 2009 only).
+  The Bionic implementation was incorrect. Technically, this is an ABI
+  breakage, but code that used this function probably never worked or
+  compiled properly anyway.</p>
+</li>
+<li>
+<p>&lt;strings.h&gt;: Add missing &lt;sys/types.h&gt; include.</p>
+</li>
+<li>
+<p>&lt;sys/queue.h&gt;: Added new header (no implementation - macro templates).</p>
+</li>
+<li>
+<p>&lt;sys/resource.h&gt;: Add rlim_t proper definition.</p>
+</li>
+<li>
+<p>&lt;time64.h&gt;: Add missing C++ header inclusion guards.</p>
+</li>
+<li>
+<p>&lt;unistd.h&gt;: Add getusershell(), setusershell() and endusershell(), though
+  implementation are bogus. GLibc compatibility.</p>
+</li>
+<li>
+<p>&lt;wchar.h&gt;: Add mbstowcs() and wcstombs()</p>
+</li>
+<li>
+<p>add clone() implementation for ARM (x86 and SH-4 not working yet).</p>
+</li>
+<li>
+<p>&lt;sys/epoll.h&gt;: &lt;sys/system_properties.h&gt;: Add missing C++ inclusion guards</p>
+</li>
+<li>
+<p>fix getpwnam() and getpwgrp() to accept "app_0" as a valid user name.</p>
+</li>
+<li>
+<p>fix sem_trywait() to return -1 and set errno to EAGAIN, instead of
+  returning EAGAIN directly.</p>
+</li>
+<li>
+<p>fix sem_post() to wake up multiple threads when called rapidly in
+  succession.</p>
+</li>
+<li>
+<p>DNS: partial implementation of RFC3484 (rule 1, 2, 5, 6, 8, 10 and
+  modified rule 9), for better address selection/sorting.
+  In the process, removed code that was previously used for "sortlist"
+  in /etc/resolv.conf. (resolv.conf is already ignored, so the latter
+  is a no-op for actual functionality.)</p>
+</li>
+<li>
+<p>fix pthread_sigmask() to properly return an error code without touching
+  errno. Previous implementation returned -1 on error, setting errno, which
+  is not Posix compliant.</p>
+</li>
+<li>
+<p>add sigaltstack() implementation for ARM.</p>
+</li>
+<li>
+<p>&lt;time.h&gt;: Properly implement the 'timezone' and 'daylight' global variables
+  (they were not defined previously, though declared in the header).</p>
+</li>
+<li>
+<p>&lt;time.h&gt;: Fix timezone management implementation to properly update
+  'tm_gmtoff' field in 'struct tm' structure.</p>
+</li>
+<li>
+<p>DNS: get rid of spurious random DNS queries when trying to resolve
+  an unknown domain name. Due to an initialization bug, a random DNS search
+  list was generated for each thread if net.dns.search is not defined.</p>
+</li>
+<li>
+<p>&lt;pthread.h&gt;: Add pthread_condattr_init/destroy/setpshared/getpshared functions
+  to enable proper shared conditional variable initialization.</p>
+</li>
+</ul>
+<p>Modify the pthread_mutex_t and pthread_cond_t implementation to use private
+  futexes for performance reasons. Mutexes and Condvars are no longer shareable
+  between processes by default anymore, unless you use PTHREAD_PROCESS_SHARED
+  with pthread_mutexattr_setpshared() and/or pthread_condattr_setpshared().</p>
+<hr />
+<p>Differences between Android 2.1 and 2.0.1:</p>
+<ul>
+<li>zoneinfo: updated data tables to version 2009s</li>
+</ul>
+<hr />
+<p>Differences between Android 2.0.1 and 2.0:</p>
+<ul>
+<li>abort(): ARM-specific hack to preserve the 'lr' register when abort()
+  is called (GCC does not preserve it by default since it thinks that
+  abort() never returns). This improves stack traces considerably.</li>
+</ul>
+<hr />
+<p>Differences between Android 2.0 and 1.6:</p>
+<ul>
+<li>
+<p>memcmp(), memcpy(): ARMv7 optimized versions.</p>
+</li>
+<li>
+<p>pthread_mutexattr_setpshared(): implementation will not return ENOTSUP
+  if PTHREAD_PROCESS_SHARED is used, because our Mutex implementation can
+  work across multiple processes.</p>
+</li>
+</ul>
+<p><em>HOWEVER</em> it does not use "robust futexes" which means that held mutexes
+  <em>are not</em> automatically released by the kernel when the owner process
+  crashes or exits. This is only done to simplify communication between
+  two always-live system processes, DO NOT USE THIS IN APPLICATIONS !</p>
+<ul>
+<li>
+<p>pthread_mutex_lock_timeout_np(): New Android-specific function to
+  perform a timed lock (). In case of timeout, it returns EBUSY.</p>
+</li>
+<li>
+<p>pthread_cond_timedwait_monotonic_np(): Same as pthread_cond_timedwait()
+  but uses the monotonic clock(). Android-specific.</p>
+</li>
+<li>
+<p>pthread_cond_timedwait_relative_np(): Same as pthread_cond_timedwait()
+  but uses a relative timeout instead. Android-specific.</p>
+</li>
+<li>
+<p>&lt;netinet/in.h&gt;: Now includes &lt;netinet/in6.h&gt;.</p>
+</li>
+<li>
+<p>&lt;netinet/in6.h&gt;: Added IPV6_JOIN_GROUP, IPV6_LEAVE_GROUP, IN6ADDR_ANY_INIT
+  and ipv6mr_interface definitions.</p>
+</li>
+<li>
+<p>&lt;time.h&gt;:</p>
+<ul>
+<li>Add missing tzset() declaration.</li>
+<li>Add Android-specific strftime_tz().</li>
+</ul>
+</li>
+<li>
+<p>getaddrinfo():
+    Only perform IPv6 lookup for AF_UNSPEC if we have IPv6 connectivity.
+    This saves one DNS query per lookup on non-IPv6 systems.</p>
+</li>
+<li>
+<p>mktime(): Fix an infinite loop problem that appeared when switching to
+  GCC 4.4.0.</p>
+</li>
+<li>
+<p>strftime(): fix incorrect handling of dates &gt; 2038 due to 64-bit issue
+  in original code.</p>
+</li>
+</ul>
+<hr />
+<p>Differences between Android 1.6 and 1.5:</p>
+<ul>
+<li>
+<p>C runtime: Fix runtime initialization to be called before any static C++
+  constructors. This allows these to use pthread functions properly.</p>
+</li>
+<li>
+<p><code>__aeabi_atexit</code>(): Fix implementation to properly call C++ static destructors
+  when the program exits (or when a shared library is unloaded).</p>
+</li>
+<li>
+<p>&lt;sys/stat.h&gt;: added GLibc compatibility macros definitions:</p>
+<pre><code>#define  st_atimensec  st_atime_nsec
+#define  st_mtimensec  st_mtime_nsec
+#define  st_ctimensec  st_ctime_nsec
+</code></pre>
+</li>
+<li>
+<p>getaddrinfo(): implementation will now allow numeric ports if ai_socktype is
+  set to ANY. This is to match the GLibc behaviour.</p>
+</li>
+<li>
+<p>getservent(): and getservent_r() incorrectly returned the port in host-endian
+  order in the s_port field. It now returns it in big-endian order.</p>
+</li>
+<li>
+<p>DNS: Allow underscore in the middle of DNS labels. While not really
+  standard, this extension is needed for some VPN configurations and is
+  supported by other operating systems.</p>
+</li>
+<li>
+<p>DNS: Support for DNS domain search lists through the new net.dns.search
+  system property. The corresponding value must be a space-separated list of
+  domain suffixes.
+</pre></body></html></p>
+</li>
+</ul>

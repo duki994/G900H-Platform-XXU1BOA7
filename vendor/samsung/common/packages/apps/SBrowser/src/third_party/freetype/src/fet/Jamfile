@@ -1,0 +1,23 @@
+# FreeType 2 src/fet Jamfile
+
+
+SubDir FT2_TOP $(FT2_SRC_DIR) fet ;
+
+{
+  local  _sources ;
+
+  if $(FT2_MULTI)
+  {
+    _sources = sfenhancer sfreshaper ;
+  }
+  else
+  {
+    _sources = fet ;
+  }
+
+  Library  $(FT2_LIB) : $(_sources).c ;
+}
+
+#Library  $(FT2_LIB) : fet.c ;
+
+# end of src/fet Jamfile

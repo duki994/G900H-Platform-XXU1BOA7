@@ -1,0 +1,73 @@
+// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+#include "ui/views/test/views_test_base.h"
+
+#include "base/run_loop.h"
+#include "ui/base/clipboard/clipboard.h"
+#include "ui/base/ime/input_method_initializer.h"
+#include "ui/aura/env.h"
+#include "ui/aura/root_window.h"
+#include "ui/aura/test/aura_test_helper.h"
+#include "ui/views/corewm/capture_controller.h"
+#include "ui/views/corewm/wm_state.h"
+
+namespace views {
+
+ViewsTestBase::ViewsTestBase()
+    : setup_called_(false),
+      teardown_called_(false) {
+}
+
+ViewsTestBase::~ViewsTestBase() {
+  CHECK(setup_called_)
+      << "You have overridden SetUp but never called super class's SetUp";
+  CHECK(teardown_called_)
+      << "You have overrideen TearDown but never called super class's TearDown";
+}
+
+void ViewsTestBase::SetUp() {
+  testing::Test::SetUp();
+  setup_called_ = true;
+  if (!views_delegate_.get())
+    views_delegate_.reset(new TestViewsDelegate());
+  aura_test_helper_.reset(new aura::test::AuraTestHelper(&message_loop_));
+  bool allow_test_contexts = true;
+  aura_test_helper_->SetUp(allow_test_contexts);
+  wm_state_.reset(new views::corewm::WMState);
+  ui::InitializeInputMethodForTesting();
+}
+
+void ViewsTestBase::TearDown() {
+  ui::Clipboard::DestroyClipboardForCurrentThread();
+
+  // Flush the message loop because we have pending release tasks
+  // and these tasks if un-executed would upset Valgrind.
+  RunPendingMessages();
+  teardown_called_ = true;
+  views_delegate_.reset();
+  testing::Test::TearDown();
+  ui::ShutdownInputMethodForTesting();
+  aura_test_helper_->TearDown();
+  wm_state_.reset();
+  CHECK(!corewm::ScopedCaptureClient::IsActive());
+}
+
+void ViewsTestBase::RunPendingMessages() {
+  base::RunLoop run_loop;
+  run_loop.RunUntilIdle();
+}
+
+Widget::InitParams ViewsTestBase::CreateParams(
+    Widget::InitParams::Type type) {
+  Widget::InitParams params(type);
+  params.context = aura_test_helper_->root_window();
+  return params;
+}
+
+gfx::NativeView ViewsTestBase::GetContext() {
+  return aura_test_helper_->root_window();
+}
+
+}  // namespace views

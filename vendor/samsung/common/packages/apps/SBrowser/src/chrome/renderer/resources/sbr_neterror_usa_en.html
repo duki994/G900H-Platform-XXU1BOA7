@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html i18n-values="dir:textdirection">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,
+                                 maximum-scale=1.0, user-scalable=no">
+  <title i18n-content="title"></title>
+  <link rel="stylesheet" href="neterror_usa.css">
+  <script src="neterror_usa.js"></script>
+</head>
+<body id="t">
+    <div id="main-frame-error">
+        <div id="box">
+            <div id="content-top">
+                <div><h1>Unable to display webpage.</h1></div>
+                <div>
+                    Your mobile device is not connected to the network. Follow the links below to find out more about possible solutions.
+                </div><br>
+
+                <div class="lineHeight">
+                    <li><a onclick="toggleHelpBox1()">Check network status</a></li>
+                    <li><a onclick="toggleHelpBox2()">Connect to mobile network</a></li>
+                    <li><a onclick="toggleHelpBox3()">Connect to Wi-Fi network</a></li>
+                    <li><a onclick="toggleHelpBox4()">Check SIM card</a></li>
+                </div>
+            </div> <!--content-top-->
+
+            <!-- Outer and inner divs are needed both for margins and sizing. -->
+            <div id="help-box-outer1" class="hidden">
+                <div id="help-box-inner">
+                    <div><h1>Check network status</h1></div>
+                    <div>
+                        To connect to the internet, your device must be within range of the mobile network or connected to Wi-Fi. The status bar provides info such as the device's signal strength and connection status.
+                    </div>
+                </div>
+            </div>
+
+            <div id="help-box-outer2" class="hidden">
+                <div id="help-box-inner">
+                    <div><h1>Connect to mobile network</h1></div>
+                    <div>
+                        To connect via your mobile network, Mobile data must be turned on.
+                    </div><br>
+                    <div>
+                        On your phone, go to Settings > Connections tab > More networks > Mobile networks, and turn on Mobile data.
+                    </div><br>
+                    <div>
+                        On your tablet, go to Settings > More settings > Mobile networks, and turn on Mobile data.
+                    </div>
+                </div>
+            </div>
+
+            <div id="help-box-outer3" class="hidden">
+                <div id="help-box-inner">
+                    <div><h1>Connect to Wi-Fi network</h1></div>
+                    <div>
+                        To connect via a Wi-Fi network, Wi-Fi must be turned on.
+                    </div><br>
+                    <div>
+                        On your phone, go to Settings > Connections and turn on Wi-Fi. Then select a wireless network to connect to.
+                    </div><br>
+                    <div>
+                        On your tablet, go to Settings and turn on Wi-Fi. Then select a wireless network to connect to.
+                    </div>
+                </div>
+            </div>
+
+            <div id="help-box-outer4" class="hidden">
+                <div id="help-box-inner">
+                    <div><h1>Check SIM card</h1></div>
+                    <div>
+                        If your SIM card is not inserted correctly, your device will not be able to connect to your mobile network.
+                    </div><br>
+                    <div>
+                        Remove the back cover, then pull out the battery and the SIM card. Re-insert the SIM card, making sure that the gold-colored contact is facing down. Push the SIM card firmly into the slot until it locks in place.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+

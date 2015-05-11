@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+
+<!ENTITY syncBrand.fullName.label "Firefox Sync">
+<!ENTITY syncBrand.shortName.label "Sync">
+<!ENTITY brandShortName "Firefox">
+
+<!ENTITY formatS "&#037;s">
+<!ENTITY formatS1 "&#037;1&#036;s">
+<!ENTITY formatS2 "&#037;2&#036;s">
+<!ENTITY formatS3 "&#037;3&#036;s">
+<!ENTITY formatD "&#037;d">
+
+<!-- Main titles. -->
+<!ENTITY sync.app.name.label '&syncBrand.fullName.label;'>
+<!ENTITY sync.title.connect.label 'Connect to &syncBrand.shortName.label;'>
+<!ENTITY sync.title.adddevice.label 'Add a &syncBrand.fullName.label; Account'>
+<!ENTITY sync.title.pair.label 'Pair a Device'>
+
+<!-- J-PAKE Key Screen -->
+<!ENTITY sync.subtitle.connect.label 'To activate your new device, select “Set up &syncBrand.shortName.label;” on the device.'>
+<!ENTITY sync.subtitle.header2.label 'Enter this code on your other device'>
+<!ENTITY sync.subtitle.connectlocation2.label 'Select “&sync.title.pair.label;” in the &syncBrand.shortName.label; section of your other device\&apos;s Firefox options.'>
+<!ENTITY sync.subtitle.pair.label 'To activate, select “Pair a device” on your other device.'>
+<!ENTITY sync.pin.default.label '...\n...\n...\n'>
+<!ENTITY sync.pin.oneline.label '...'>
+<!ENTITY sync.link.show.label 'Show me how.'>
+<!ENTITY sync.link.advancedsetup.label 'Advanced setup…'>
+<!ENTITY sync.link.nodevice.label 'I don\&apos;t have the device with me…'>
+
+<!-- J-PAKE Waiting Screen -->
+<!ENTITY sync.jpake.subtitle.waiting.label 'Waiting for other device…'>
+
+<!-- Account Login Screen -->
+<!ENTITY sync.subtitle.account.label 'Enter your &syncBrand.fullName.label; account information'>
+<!ENTITY sync.input.username.label 'Account Name'>
+<!ENTITY sync.input.password.label 'Password'>
+<!ENTITY sync.input.key.label 'Recovery Key'>
+<!ENTITY sync.checkbox.server.label 'Use custom server'>
+<!ENTITY sync.input.server.label 'Server URL'>
+  
+<!-- Setup Fail -->
+<!ENTITY sync.title.fail.label 'Cannot Set Up &syncBrand.shortName.label;'>
+<!ENTITY sync.subtitle.fail.label '&syncBrand.fullName.label; could not connect to the server. Would you like to try again?'>
+<!ENTITY sync.button.tryagain.label 'Try again'>
+<!ENTITY sync.button.manual.label 'Manual Setup'>
+<!ENTITY sync.subtitle.nointernet.label 'No internet connection available.'>
+<!ENTITY sync.subtitle.failaccount.label 'Account creation on your device failed.'>
+<!ENTITY sync.subtitle.failmultiple.label 'Do you have more than one Firefox installed? Currently, &syncBrand.fullName.label; only supports one Firefox installation at a time. Please uninstall other instances to use &syncBrand.shortName.label;.'>
+  
+<!-- Setup Success -->
+<!ENTITY sync.title.success.label 'Setup Complete'>
+<!ENTITY sync.subtitle.success.label1 'Your data is now being downloaded in the background. You can go to Settings to manage your account, or start browsing with &brandShortName;.'>
+<!ENTITY sync.settings.label 'Settings'>
+<!ENTITY sync.subtitle.manage.label1 'Your &syncBrand.fullName.label; account is already set up. You can go to Settings to manage your account, or launch &brandShortName;.'>
+
+<!-- Pair Device -->
+<!ENTITY sync.pair.tryagain.label 'Please try again.'>
+<!ENTITY sync.pair.connectlocation.label 'To activate your new device, select “Set up &syncBrand.shortName.label;” on the device, and then select “I Have an Account.”'>
+
+<!-- Firefox SyncAdapter Settings Screen -->
+<!ENTITY sync.settings.options.label 'Options'>
+<!ENTITY sync.summary.pair.label 'Link another device to your &syncBrand.shortName.label; account'>
+
+<!-- Configure Engines -->
+<!ENTITY sync.configure.engines.title.label 'What to sync'>
+<!ENTITY sync.configure.engines.sync.my.title.label 'Sync your…'>
+<!ENTITY sync.configure.engines.title.bookmarks 'Bookmarks'>
+<!ENTITY sync.configure.engines.title.passwords 'Passwords'>
+<!ENTITY sync.configure.engines.title.history 'History'>
+<!ENTITY sync.configure.engines.title.tabs 'Tabs'>
+
+<!-- Common text -->
+<!ENTITY sync.button.cancel.label 'Cancel'>
+<!ENTITY sync.button.connect.label 'Connect'>
+<!ENTITY sync.button.ok.label 'OK'>
+
+<!-- Account strings -->
+<!ENTITY sync.account.label '&syncBrand.fullName.label; (deprecated)'>
+
+<!-- Bookmark folder strings -->
+<!ENTITY bookmarks.folder.menu.label 'Bookmarks Menu'>
+<!ENTITY bookmarks.folder.places.label ''>
+<!ENTITY bookmarks.folder.tags.label 'Tags'>
+<!ENTITY bookmarks.folder.toolbar.label 'Bookmarks Toolbar'>
+<!ENTITY bookmarks.folder.unfiled.label 'Unsorted Bookmarks'>
+<!ENTITY bookmarks.folder.desktop.label 'Desktop Bookmarks'>
+<!ENTITY bookmarks.folder.mobile.label 'Mobile Bookmarks'>
+<!ENTITY bookmarks.folder.readinglist.label 'Reading List'>
+<!-- Pinned sites on about:home. This folder should never be shown to the user, but we have to give it a string name -->
+<!ENTITY bookmarks.folder.pinned.label 'Pinned'>
+
+<!-- Notification strings -->
+<!ENTITY sync.notification.oneaccount.label 'Only one &syncBrand.fullName.label; account is supported.'>
+<!ENTITY sync.notification.configure.saved 'Your selections have been saved.'>
+
+<!-- Incorrect settings and changing credentials. -->
+<!ENTITY sync.invalidcreds.label 'Incorrect account name or password.'>
+<!ENTITY sync.invalidserver.label 'Please enter a valid server URL'>
+<!ENTITY sync.verifying.label 'Verifying…'>
+<!ENTITY sync.new.recoverykey.status.incorrect 'Recovery Key incorrect. Please try again.'>
+
+<!-- Send tab to device. -->
+<!ENTITY sync.title.send.tab.label 'Send Tab To Devices'>
+<!ENTITY sync.button.send.label 'Send'>
+<!ENTITY sync.button.set.up.sync.label 'Set up &syncBrand.shortName.label;'>
+<!ENTITY sync.title.redirect.to.set.up.sync.label 'Set up &syncBrand.shortName.label; to send tabs'>
+<!ENTITY sync.text.redirect.to.set.up.sync.label 'Set up &syncBrand.fullName.label; on your device to send tabs to other devices.'>
+<!ENTITY sync.text.tab.sent.label 'Your tab was sent!'>
+<!ENTITY sync.text.tab.not.sent.label 'There was a problem sending your tab.'>
+
+<!-- Firefox account strings. -->
+
+<!-- Localization note: these are shown in all screens that query the
+     user for an email address and password. Hide and show are button
+     labels. -->
+<!ENTITY fxaccount_email_hint 'Email'>
+<!ENTITY fxaccount_password_hint 'Password'>
+<!ENTITY fxaccount_password_hide 'Hide'>
+<!ENTITY fxaccount_password_show 'Show'>
+
+<!-- Localization note: these are shown in screens after the user has
+     created or signed in to an account, and take the user back to
+     Firefox. -->
+<!ENTITY fxaccount_back_to_browsing 'Back to browsing'>
+
+<!ENTITY fxaccount_policy_linktos 'Terms of Service'>
+<!ENTITY fxaccount_policy_linkprivacy 'Privacy Notice'>
+
+<!ENTITY fxaccount_getting_started_welcome_to_sync 'Welcome to &syncBrand.shortName.label;'>
+<!ENTITY fxaccount_getting_started_description 'Sign in to sync your tabs, bookmarks, passwords &amp; more.'>
+<!ENTITY fxaccount_getting_started_get_started 'Get started'>
+<!ENTITY fxaccount_getting_started_old_firefox 'Using an older version of &syncBrand.shortName.label;?'>
+
+<!-- Localization note: the Firefox below should not change with the
+     particular version of Firefox installed (Release, Beta, Aurora,
+     etc).  The account remains a "Firefox" account. -->
+<!ENTITY fxaccount_create_account_header 'Create a Firefox account'>
+<!ENTITY fxaccount_create_account_password_length_restriction 'Must be at least 8 characters'>
+<!ENTITY fxaccount_create_account_year_of_birth 'Year of birth'>
+<!-- Localization note: &formatS1; is fxaccount_policy_linktos, &formatS2; is fxaccount_policy_linkprivacy, both hyperlinked. -->
+<!ENTITY fxaccount_create_account_policy_text 'By proceeding, I agree to the &formatS1; and &formatS2; of Firefox online services.'>
+<!ENTITY fxaccount_create_account_button 'Next'>
+<!ENTITY fxaccount_create_account_choose_what_to_sync 'Choose what to sync'>
+<!ENTITY fxaccount_create_account_sign_in_instead 'Already have an account? Sign in'>
+<!ENTITY fxaccount_create_account_1990_or_earlier '1990 or earlier'>
+<!ENTITY fxaccount_create_account_unknown_error 'Could not create account'>
+
+<!ENTITY fxaccount_account_create_not_allowed 'Cannot create account'>
+<!ENTITY fxaccount_account_create_not_allowed_you_must_meet_certain_age_requirements 'You must meet certain age requirements to create an account.'>
+<!ENTITY fxaccount_account_create_not_allowed_learn_more 'Learn more'>
+
+<!ENTITY fxaccount_confirm_account_header 'Confirm your account'>
+<!-- Localization note: &formatS; is the Firefox account's email address. -->
+<!ENTITY fxaccount_confirm_account_verification_link 'A verification link has been sent to &formatS;'>
+<!ENTITY fxaccount_confirm_account_resend_email 'Resend email'>
+<!ENTITY fxaccount_confirm_account_verification_link_sent2 'Verification email sent'>
+<!ENTITY fxaccount_confirm_account_verification_link_not_sent2 'Couldn\&apos;t send verification email'>
+
+<!ENTITY fxaccount_sign_in_sub_header 'Sign in'>
+<!ENTITY fxaccount_sign_in_button_label 'Sign in'>
+<!ENTITY fxaccount_sign_in_forgot_password 'Forgot password?'>
+<!ENTITY fxaccount_sign_in_create_account_instead 'Create an account'>
+<!ENTITY fxaccount_sign_in_unknown_error 'Could not sign in'>
+
+<!ENTITY fxaccount_account_verified_sub_header 'Account verified'>
+<!ENTITY fxaccount_account_verified_description2 'Your data will begin syncing momentarily.'>
+
+<!ENTITY fxaccount_update_credentials_header 'Sign in'>
+<!ENTITY fxaccount_update_credentials_button_label 'Sign in'>
+<!ENTITY fxaccount_update_credentials_unknown_error 'Could not sign in'>
+
+<!ENTITY fxaccount_status_header 'Firefox account'>
+<!ENTITY fxaccount_status_signed_in_as 'Signed in as'>
+<!ENTITY fxaccount_status_sync '&syncBrand.shortName.label;'>
+<!ENTITY fxaccount_status_sync_enabled '&syncBrand.shortName.label;: enabled'>
+<!ENTITY fxaccount_status_needs_verification2 'Your account needs to be verified. Tap to resend verification email.'>
+<!ENTITY fxaccount_status_needs_credentials 'Cannot connect. Tap to sign in.'>
+<!ENTITY fxaccount_status_needs_upgrade 'You need to upgrade &brandShortName; to sign in.'>
+<!ENTITY fxaccount_status_bookmarks 'Bookmarks'>
+<!ENTITY fxaccount_status_history 'History'>
+<!ENTITY fxaccount_status_passwords 'Passwords'>
+<!ENTITY fxaccount_status_tabs 'Open tabs'>
+<!ENTITY fxaccount_status_legal 'Legal' >
+
+<!-- Localization note: this is the name shown by the Android system
+     itself for a Firefox account. Don't localize this. -->
+<!ENTITY fxaccount_account_type_label 'Firefox'>
+
+
+<!ENTITY fxaccount_options_title '&syncBrand.shortName.label; Options'>
+<!ENTITY fxaccount_options_configure_title 'Configure &syncBrand.shortName.label;'>
+
+<!-- Localization note: these error messages are shown after a request
+     has been made to the remote server, and an error of some type has
+     been returned. -->
+<!ENTITY fxaccount_remote_error_UPGRADE_REQUIRED 'You need to upgrade Firefox'>
+
+<!-- Localization note: the format string will be fxaccount_sign_in_button_label, linkified. -->
+<!ENTITY fxaccount_remote_error_ATTEMPT_TO_CREATE_AN_ACCOUNT_THAT_ALREADY_EXISTS_2 'Account already exists'>
+<!ENTITY fxaccount_remote_error_ATTEMPT_TO_ACCESS_AN_ACCOUNT_THAT_DOES_NOT_EXIST 'Invalid email or password'>
+<!ENTITY fxaccount_remote_error_INCORRECT_PASSWORD 'Invalid email or password'>
+<!ENTITY fxaccount_remote_error_ATTEMPT_TO_OPERATE_ON_AN_UNVERIFIED_ACCOUNT 'Account is not verified'>
+<!ENTITY fxaccount_remote_error_CLIENT_HAS_SENT_TOO_MANY_REQUESTS 'Server busy, try again soon'>
+<!ENTITY fxaccount_remote_error_SERVICE_TEMPORARILY_UNAVAILABLE_TO_DUE_HIGH_LOAD 'Server busy, try again soon'>
+<!ENTITY fxaccount_remote_error_UNKNOWN_ERROR 'There was a problem'>
+<!ENTITY fxaccount_remote_error_COULD_NOT_CONNECT 'Cannot connect to network'>
+
+<!ENTITY fxaccount_sync_sign_in_error_notification_title2 '&syncBrand.shortName.label; is not connected'>
+<!-- Note to translators: the format string below will be replaced
+     with the Firefox account's email address. -->
+<!ENTITY fxaccount_sync_sign_in_error_notification_text2 'Tap to sign in as &formatS;'>
+
+<!ENTITY  no_space_to_start_error "There is not enough space available for &brandShortName; to start.">
+<!ENTITY  error_loading_file "An error occurred when trying to load files required to run &brandShortName;">
+
+<!-- Localization note: These are used as the titles of different pages on the home screen.
+     They are automatically converted to all caps by the Android platform. -->
+<!ENTITY  bookmarks_title "Bookmarks">
+<!ENTITY  history_title "History">
+<!ENTITY  reading_list_title "Reading List">
+
+<!ENTITY  switch_to_tab "Switch to tab">
+
+<!ENTITY  crash_reporter_title "&brandShortName; Crash Reporter">
+<!ENTITY  crash_message2 "&brandShortName; had a problem and crashed. Your tabs should be listed on the &brandShortName; Start page when you restart.">
+<!ENTITY  crash_send_report_message3 "Tell &vendorShortName; about this crash so they can fix it">
+<!ENTITY  crash_include_url2 "Include the address of the page I was on">
+<!ENTITY  crash_sorry "We\'re sorry">
+<!ENTITY  crash_comment "Add a comment (comments are publicly visible)">
+<!ENTITY  crash_allow_contact2 "Allow &vendorShortName; to contact me about this report">
+<!ENTITY  crash_email "Your email">
+<!ENTITY  crash_closing_alert "Exit without sending a crash report?">
+<!ENTITY  sending_crash_report "Sending crash report\u2026">
+<!ENTITY  crash_close_label "Close">
+<!ENTITY  crash_restart_label "Restart &brandShortName;">
+<!ENTITY  exit_label "Exit">
+
+<!ENTITY  launcher_shortcuts_title "&brandShortName; Web Apps">
+<!ENTITY  launcher_shortcuts_empty "No web apps were found">
+
+<!ENTITY choose_file "Choose File">
+
+<!ENTITY url_bar_default_text "Enter Search or Address">
+
+<!ENTITY bookmark "Bookmark">
+<!ENTITY bookmark_added "Bookmark added">
+<!ENTITY bookmark_updated "Bookmark updated">
+<!ENTITY bookmark_options "Options">
+
+<!ENTITY history_today_section "Today">
+<!ENTITY history_yesterday_section "Yesterday">
+<!ENTITY history_week_section "7 days ago">
+<!ENTITY history_older_section "Older than 7 days">
+
+<!ENTITY go "Go">
+<!ENTITY search "Search">
+<!ENTITY reload "Reload">
+<!ENTITY forward "Forward">
+<!ENTITY menu "Menu">
+<!ENTITY back "Back">
+<!ENTITY stop "Stop">
+<!ENTITY site_security "Site Security">
+
+<!ENTITY close_tab "Close Tab">
+<!ENTITY one_tab "1 tab">
+<!-- Localization note (num_tabs2) : Number of tabs is always more than one.
+     We can't use android plural forms, sadly. See bug #753859. -->
+<!ENTITY num_tabs2 "&formatD; tabs">
+<!ENTITY new_tab_opened "New tab opened">
+
+<!ENTITY settings "Settings">
+<!ENTITY settings_title "Settings">
+<!ENTITY pref_category_advanced "Advanced">
+<!ENTITY pref_category_customize "Customize">
+<!ENTITY pref_category_search3 "Search">
+<!ENTITY pref_category_search_summary "Customize your search providers">
+<!ENTITY pref_category_display "Display">
+<!ENTITY pref_category_privacy_short "Privacy">
+<!ENTITY pref_category_vendor "&vendorShortName;">
+<!ENTITY pref_category_datareporting "Data choices">
+<!ENTITY pref_learn_more "Learn more">
+<!ENTITY pref_category_installed_search_engines "Installed search engines">
+<!ENTITY pref_category_add_search_providers "Add more search providers">
+<!ENTITY pref_category_search_restore_defaults "Restore search engines">
+<!ENTITY pref_search_restore_defaults "Restore defaults">
+<!ENTITY pref_search_restore_defaults_summary "Restore defaults">
+<!-- Localization note (pref_search_hint) : "TIP" as in "hint", "clue" etc. Displayed as an
+     advisory message on the customise search providers settings page explaining how to add new
+     search providers.
+     The &formatI; in the string will be replaced by a small image of the icon described, and can be moved to wherever
+     it is applicable. -->
+<!ENTITY pref_search_hint "TIP: Add any website to your list of search providers by long-pressing on its search field and then tapping the &formatI; icon.">
+<!ENTITY pref_category_devtools "Developer tools">
+<!ENTITY pref_developer_remotedebugging "Remote debugging">
+<!ENTITY pref_remember_signons "Remember passwords">
+
+<!ENTITY pref_category_home "Home">
+<!ENTITY pref_category_home_summary "Customize your homepage">
+<!ENTITY pref_category_home_panels "Panels">
+<!ENTITY pref_home_add_panel "Add panel">
+<!ENTITY home_add_panel_title "Add new panel">
+<!ENTITY home_add_panel_empty "Sorry, we couldn\'t find any panels for you to add.">
+<!-- Localization note (home_add_panel_installed):
+     The &formatS; will be replaced with the name of the new panel the user just
+     selected to be added to the home page. -->
+<!ENTITY home_add_panel_installed "\'&formatS;\' added to homepage">
+<!ENTITY pref_category_home_content_settings "Content settings">
+<!ENTITY pref_home_updates "Automatic updates">
+<!ENTITY pref_home_updates_enabled "Enabled">
+<!ENTITY pref_home_updates_wifi "Only over Wi-Fi">
+
+<!-- Localization note: These are shown in the left sidebar on tablets -->
+<!ENTITY pref_header_customize "Customize">
+<!ENTITY pref_header_display "Display">
+<!ENTITY pref_header_privacy_short "Privacy">
+<!ENTITY pref_header_help "Help">
+<!ENTITY pref_header_vendor "&vendorShortName;">
+<!ENTITY pref_header_devtools "Developer tools">
+
+<!ENTITY pref_cookies_menu "Cookies">
+<!ENTITY pref_cookies_accept_all "Enabled">
+<!ENTITY pref_cookies_not_accept_foreign "Enabled, excluding 3rd party">
+<!ENTITY pref_cookies_disabled "Disabled">
+
+<!ENTITY pref_donottrack_menu "Tracking">
+<!ENTITY pref_donottrack_disallow_tracking "Tell sites that I do not want to be tracked">
+<!ENTITY pref_donottrack_allow_tracking "Tell sites that I want to be tracked">
+<!ENTITY pref_donottrack_no_pref "Do not tell sites anything about my tracking preferences">
+
+<!ENTITY pref_char_encoding "Character encoding">
+<!ENTITY pref_char_encoding_on "Show menu">
+<!ENTITY pref_char_encoding_off "Don\'t show menu">
+<!ENTITY pref_clear_private_data "Clear private data">
+<!ENTITY pref_plugins "Plugins">
+<!ENTITY pref_plugins_enabled "Enabled">
+<!ENTITY pref_plugins_tap_to_play "Tap to play">
+<!ENTITY pref_plugins_disabled "Disabled">
+<!ENTITY pref_text_size "Text size">
+<!ENTITY pref_reflow_on_zoom4 "Text reflow">
+<!ENTITY pref_restore "Tabs">
+<!ENTITY pref_restore_always "Always restore">
+<!ENTITY pref_restore_quit "Don\'t restore after quitting &brandShortName;">
+<!ENTITY pref_font_size_tiny "Tiny">
+<!ENTITY pref_font_size_small "Small">
+<!ENTITY pref_font_size_medium "Medium">
+<!ENTITY pref_font_size_large "Large">
+<!ENTITY pref_font_size_xlarge "Extra Large">
+<!ENTITY pref_font_size_set "Set">
+<!-- Localization note (pref_font_size_adjust_char): A button with a small version of this character
+(or combination of characters) is used to decrease the preview font size; a larger version of the
+same character/combination is used to increase the preview font size. It should be a concise
+representation of the language it is used in that will help show the text in the preview will change
+size. -->
+<!ENTITY pref_font_size_adjust_char "A">
+
+<!-- Localization note (pref_font_size_preview_text): This paragraph is used as an example to
+    demonstrate the font size setting.  It is meant to be whimsical and fun. -->
+<!ENTITY pref_font_size_preview_text "The quick orange fox jumps over your expectations with more speed, more flexibility and more security. As a non-profit, we\'re free to innovate on your behalf without any pressure to compromise. That means a better experience for you and a brighter future for the Web.">
+
+<!ENTITY pref_use_master_password "Use master password">
+<!ENTITY pref_show_product_announcements "Show product announcements">
+<!ENTITY pref_sync "Sync">
+<!ENTITY pref_search_suggestions "Show search suggestions">
+<!ENTITY pref_import_android "Import from Android">
+<!ENTITY pref_private_data_history2 "Browsing history">
+<!ENTITY pref_private_data_formdata "Form &amp; search history">
+<!ENTITY pref_private_data_cookies2 "Cookies &amp; active logins">
+<!ENTITY pref_private_data_passwords "Saved passwords">
+<!ENTITY pref_private_data_cache "Cache">
+<!ENTITY pref_private_data_offlineApps "Offline website data">
+<!ENTITY pref_private_data_siteSettings2 "Site settings">
+<!ENTITY pref_private_data_downloadFiles2 "Downloads">
+
+
+<!ENTITY pref_about_firefox "About &brandShortName;">
+<!ENTITY pref_vendor_faqs "FAQs">
+<!ENTITY pref_vendor_feedback "Give feedback">
+
+<!ENTITY pref_dialog_set_default "Set as default">
+<!ENTITY pref_dialog_default "Default">
+<!ENTITY pref_dialog_remove "Remove">
+
+<!ENTITY pref_search_last_toast "You can\'t remove or disable your last search engine.">
+
+<!ENTITY pref_panels_show "Show">
+<!ENTITY pref_panels_hide "Hide">
+<!ENTITY pref_panels_reorder "Change order">
+<!ENTITY pref_panels_move_up "Move up">
+<!ENTITY pref_panels_move_down "Move down">
+
+<!ENTITY datareporting_notification_title "&brandShortName; stats &amp; data">
+<!ENTITY datareporting_notification_action_long "Choose what information to share">
+<!ENTITY datareporting_notification_action "Choose what to share">
+<!ENTITY datareporting_notification_summary "To improve your experience, &brandShortName; automatically sends some information to &vendorShortName;.">
+<!ENTITY datareporting_notification_summary_short "To improve your experience, &brandShortName;…">
+<!ENTITY datareporting_notification_ticker_text "&datareporting_notification_title;: &datareporting_notification_action_long;">
+
+<!-- Localization note (datareporting_fhr_title, datareporting_fhr_summary2,
+     reporting_telemetry_title, datareporting_telemetry_summary,
+     datareporting_crashreporter_summary) : These match the strings in
+     en-US/chrome/browser/preferences/advanced.dtd (healthReportSection.label,
+     healthReportDesc.label, telemetrySection.label, telemetryDesc.label,
+     crashReporterDesc.label). -->
+<!ENTITY datareporting_fhr_title "&brandShortName; Health Report">
+<!ENTITY datareporting_fhr_summary2 "Shares data with &vendorShortName; about your browser health and helps you understand your browser performance">
+<!ENTITY datareporting_abouthr_title "View my Health Report">
+<!ENTITY datareporting_telemetry_title "Telemetry">
+<!ENTITY datareporting_telemetry_summary "Shares performance, usage, hardware and customization data about your browser with &vendorShortName; to help us make &brandShortName; better">
+<!ENTITY datareporting_crashreporter_summary "&brandShortName; submits crash reports to help &vendorShortName; make your browser more stable and secure">
+<!-- Localization note (datareporting_crashreporter_title_short) : This string matches
+     (crashReporterSection.label) in en-US/chrome/browser/preferences/advanced.dtd.-->
+<!ENTITY datareporting_crashreporter_title_short "Crash Reporter">
+<!ENTITY datareporting_wifi_title2 "&vendorShortName; Location Service">
+<!ENTITY datareporting_wifi_geolocation_summary "Receives Wi-Fi and cellular location data when running in the background and shares it with &vendorShortName; to improve our geolocation service">
+
+<!-- Localization note (pref_update_autodownload2) : This should mention downloading
+     specifically, since the pref only prevents automatic downloads and not the
+     actual notification that an update is available. -->
+<!ENTITY pref_update_autodownload2 "Download updates automatically">
+<!ENTITY pref_update_autodownload_wifi "Only over Wi-Fi">
+<!ENTITY pref_update_autodownload_never "Never">
+<!ENTITY pref_update_autodownload_always "Always">
+
+<!ENTITY quit "Quit">
+
+<!ENTITY addons "Add-ons">
+<!ENTITY downloads "Downloads">
+<!ENTITY apps "Apps">
+<!ENTITY char_encoding "Character Encoding">
+
+<!ENTITY share "Share">
+<!ENTITY share_title "Share via">
+<!ENTITY share_image_failed "Unable to share this image">
+<!ENTITY save_as_pdf "Save as PDF">
+<!ENTITY find_in_page "Find in Page">
+<!ENTITY desktop_mode "Request Desktop Site">
+<!ENTITY page "Page">
+<!ENTITY tools "Tools">
+<!ENTITY new_tab "New Tab">
+<!ENTITY new_private_tab "New Private Tab">
+<!ENTITY close_all_tabs "Close All Tabs">
+<!ENTITY tabs_normal "Tabs">
+<!ENTITY tabs_private "Private">
+<!ENTITY tabs_synced "Synced">
+<!ENTITY set_image_fail "Unable to set image">
+<!ENTITY set_image_chooser_title "Set Image As">
+
+<!-- Localization note (find_text, find_prev, find_next, find_close) : These strings are used
+     as alternate text for accessibility. They are not visible in the UI. -->
+<!ENTITY find_text "Find in Page">
+<!ENTITY find_prev "Previous">
+<!ENTITY find_next "Next">
+<!ENTITY find_close "Close">
+
+<!-- Localization note (media_casting_to, media_play, media_pause, media_stop) : These strings are used
+     as alternate text for accessibility. They are not visible in the UI. -->
+<!ENTITY media_casting_to "Casting to Device">
+<!ENTITY media_play "Play">
+<!ENTITY media_pause "Pause">
+<!ENTITY media_stop "Stop">
+
+<!ENTITY contextmenu_open_new_tab "Open in New Tab">
+<!ENTITY contextmenu_open_private_tab "Open in Private Tab">
+<!ENTITY contextmenu_open_in_reader "Open in Reader">
+<!ENTITY contextmenu_remove "Remove">
+<!ENTITY contextmenu_add_to_launcher "Add to Home Screen">
+<!ENTITY contextmenu_share "Share">
+<!ENTITY contextmenu_pasteandgo "Paste &amp; Go">
+<!ENTITY contextmenu_paste "Paste">
+<!ENTITY contextmenu_copyurl "Copy Address">
+<!ENTITY contextmenu_edit_bookmark "Edit">
+<!ENTITY contextmenu_subscribe "Subscribe to Page">
+<!ENTITY contextmenu_site_settings "Edit Site Settings">
+<!ENTITY contextmenu_top_sites_edit "Edit">
+<!ENTITY contextmenu_top_sites_pin "Pin Site">
+<!ENTITY contextmenu_top_sites_unpin "Unpin Site">
+<!ENTITY contextmenu_add_search_engine "Add a Search Engine">
+
+<!ENTITY pref_titlebar_mode "Title bar">
+<!ENTITY pref_titlebar_mode_title "Show page title">
+<!ENTITY pref_titlebar_mode_url "Show page address">
+
+<!-- Localization note (pref_scroll_title_bar): Label for setting that controls
+     whether or not the dynamic toolbar is enabled. -->
+<!ENTITY pref_scroll_title_bar "Scroll title bar">
+
+<!ENTITY history_removed "Page removed">
+
+<!ENTITY bookmark_edit_title "Edit Bookmark">
+<!ENTITY bookmark_edit_name "Name">
+<!ENTITY bookmark_edit_location "Location">
+<!ENTITY bookmark_edit_keyword "Keyword">
+
+<!-- Localization note (site_settings_*) : These strings are used in the "Site Settings"
+     dialog that appears after selecting the "Edit Site Settings" context menu item. -->
+<!ENTITY site_settings_title3       "Site Settings">
+<!ENTITY site_settings_cancel       "Cancel">
+<!ENTITY site_settings_clear        "Clear">
+<!ENTITY site_settings_no_settings  "There are no settings to clear.">
+
+<!ENTITY reading_list_added "Page added to your Reading List">
+<!ENTITY reading_list_removed "Page removed from your Reading List">
+<!ENTITY reading_list_failed "Failed to add page to your Reading List">
+<!ENTITY reading_list_duplicate "Page already in your Reading List">
+
+<!-- Localization note : These strings are used as alternate text for accessibility.
+     They are not visible in the UI. -->
+<!ENTITY page_action_dropmarker_description "Additional Actions">
+
+<!ENTITY masterpassword_create_title "Create Master Password">
+<!ENTITY masterpassword_remove_title "Remove Master Password">
+<!ENTITY masterpassword_password "Password">
+<!ENTITY masterpassword_confirm "Confirm password">
+
+<!ENTITY button_ok "OK">
+<!ENTITY button_cancel "Cancel">
+<!ENTITY button_yes "Yes">
+<!ENTITY button_no "No">
+<!ENTITY button_clear_data "Clear data">
+<!ENTITY button_set "Set">
+<!ENTITY button_clear "Clear">
+
+<!ENTITY home_top_sites_title "Top Sites">
+<!-- Localization note (home_top_sites_add): This string is used as placeholder
+     text underneath empty thumbnails in the Top Sites page on about:home. -->
+<!ENTITY home_top_sites_add "Add a site">
+
+<!ENTITY home_history_title "History">
+<!ENTITY home_bookmarks_empty "Bookmarks you save show up here.">
+<!ENTITY home_last_tabs_title "Tabs from last time">
+<!ENTITY home_last_tabs_open "Open all tabs from last time">
+<!ENTITY home_last_tabs_empty "Your recent tabs show up here.">
+<!ENTITY home_most_recent_title "Most recent">
+<!ENTITY home_most_recent_empty "Websites you visited most recently show up here.">
+<!ENTITY home_reading_list_empty "Articles you save for later show up here.">
+<!-- Localization note (home_reading_list_hint): The "TIP" string is synonymous to "hint", "clue", etc. This string is displayed
+     as an advisory message on how to add content to the reading list when the reading list empty.
+     The placeholder &formatI; will be replaced by a small image of the icon described, and can be moved to wherever
+     it is applicable. -->
+<!ENTITY home_reading_list_hint2 "TIP: Save articles to your reading list by long pressing the &formatI; icon when it appears in the title bar.">
+<!-- Localization note (home_reading_list_hint_accessible): This string is used
+     as alternate text for accessibility. It is not visible in the UI. -->
+<!ENTITY home_reading_list_hint_accessible "TIP: Save articles to your reading list by long pressing the reader mode button when it appears in the title bar.">
+
+<!-- Localization note (home_default_empty): This string is used as the default text when there
+     is no data to show in an about:home panel that was created by an add-on. -->
+<!ENTITY home_default_empty "No content could be found for this panel.">
+
+<!-- Localization note (home_move_up_to_filter): The variable is replaced by the name of the
+     previous location in the navigation, such as the previous folder -->
+<!ENTITY home_move_up_to_filter "Up to &formatS;">
+
+<!ENTITY pin_site_dialog_hint "Enter a search keyword">
+
+<!ENTITY filepicker_title "Choose File">
+<!ENTITY filepicker_audio_title "Choose or record a sound">
+<!ENTITY filepicker_image_title "Choose or take a picture">
+<!ENTITY filepicker_video_title "Choose or record a video">
+
+<!-- Site identity popup -->
+<!ENTITY identity_connected_to "You are connected to">
+<!-- Localization note (identity_run_by) : This string appears between a
+domain name (above) and an organization name (below). E.g.
+
+example.com
+which is run by
+Example Enterprises, Inc.
+
+The layout of the identity dialog prevents combining this into a single string with
+substitution variables.  If it is difficult to translate the sense of the string
+with that structure, consider a translation which ignores the preceding domain and
+just addresses the organization to follow, e.g. "This site is run by " -->
+<!ENTITY identity_run_by "which is run by">
+
+<!-- Mixed content notifications in site identity popup -->
+<!ENTITY loaded_mixed_content_message "This page is displaying content that isn\'t secure.">
+<!ENTITY blocked_mixed_content_message_top "&brandShortName; has blocked content that isn\'t secure.">
+<!ENTITY blocked_mixed_content_message_bottom "Most websites will still work properly even when this content is blocked.">
+<!ENTITY learn_more "Learn More">
+<!ENTITY enable_protection "Enable protection">
+<!ENTITY disable_protection "Disable protection">
+<!ENTITY keep_blocking "Keep blocking">
+
+<!ENTITY private_data_success "Private data cleared">
+<!ENTITY private_data_fail "Some private data could not be cleared">
+
+<!ENTITY bookmarkhistory_button_import "Import">
+<!ENTITY bookmarkhistory_import_both "Importing bookmarks and history
+                                      from Android">
+<!ENTITY bookmarkhistory_import_bookmarks "Importing bookmarks
+                                           from Android">
+<!ENTITY bookmarkhistory_import_history "Importing history
+                                         from Android">
+<!ENTITY bookmarkhistory_import_wait "Please wait...">
+
+<!ENTITY suggestions_prompt3 "Would you like to turn on search suggestions?">
+
+<!-- Localization note (suggestion_for_engine): The placeholder &formatS1; will be
+     replaced with the name of the search engine. The placeholder &formatS2; will be
+     replaced with the search query. -->
+<!ENTITY suggestion_for_engine "Search &formatS1; for &formatS2;">
+
+<!ENTITY webapp_generic_name "App">
+
+<!ENTITY searchable_description "Bookmarks and history">
+
+<!ENTITY devtools_remote_debugging_forward "Don\'t forget to set up port forwarding!">
+
+ <!-- Updater notifications -->
+<!ENTITY updater_start_title2 "Update available for &brandShortName;">
+<!ENTITY updater_start_select2 "Touch to download">
+
+<!ENTITY updater_downloading_title2 "Downloading &brandShortName;">
+<!ENTITY updater_downloading_title_failed2 "Download failed">
+<!ENTITY updater_downloading_select2 "Touch to apply update once downloaded">
+<!ENTITY updater_downloading_retry2 "Touch to retry">
+
+<!ENTITY updater_apply_title2 "Update available for &brandShortName;">
+<!ENTITY updater_apply_select2 "Touch to update">
+
+<!-- Guest mode -->
+<!ENTITY new_guest_session "New Guest Session">
+<!ENTITY exit_guest_session "Exit Guest Session">
+<!ENTITY guest_session_dialog_continue "Continue">
+<!ENTITY guest_session_dialog_cancel "Cancel">
+<!ENTITY new_guest_session_title "&brandShortName; will now restart">
+<!ENTITY new_guest_session_text "The person using it will not be able to see any of your personal browsing data (like saved passwords, history or bookmarks).\n\nWhen your guest is done, their browsing data will be deleted and your session will be restored.">
+
+<!ENTITY exit_guest_session_title "&brandShortName; will now restart">
+<!ENTITY exit_guest_session_text "The browsing data from this session will be deleted.">
+
+<!-- Miscellaneous -->
+<!-- LOCALIZATION NOTE (ellipsis): This text is appended to a piece of text that does not fit in the
+     designated space. Use the unicode ellipsis char, \u2026, or use "..." if \u2026 doesn't suit
+     traditions in your locale. -->
+<!ENTITY ellipsis "…">
+
+<!-- These are only used for accessiblity for the done and overflow-menu buttons in the actionbar.
+     They are never shown to users -->
+<!ENTITY actionbar_menu "Menu">
+<!ENTITY actionbar_done "Done">
+
+]>
+<resources>
+  <!-- Used for setup success. -->
+  <string name="brand_short_name">&brandShortName;</string>
+
+  <string name="sync_app_name">&sync.app.name.label;</string>
+  <string name="sync_title_connect">&sync.title.adddevice.label;</string>
+  <string name="sync_title_pair">&sync.title.pair.label;</string>
+
+  <!-- J-PAKE PIN Screen -->
+  <string name="sync_subtitle_header">&sync.subtitle.header2.label;</string>
+  <string name="sync_subtitle_connect">&sync.subtitle.connectlocation2.label;</string>
+  <string name="sync_subtitle_pair">&sync.pair.connectlocation.label;</string>
+  <string name="sync_pin_default">&sync.pin.oneline.label;</string>
+  <string name="sync_link_show"><u>&sync.link.show.label;</u></string>
+  <string name="sync_link_advancedsetup"><u>&sync.link.advancedsetup.label;</u></string>
+
+  <!-- J-PAKE Waiting Screen -->
+
+  <string name="sync_jpake_subtitle_waiting">&sync.jpake.subtitle.waiting.label;</string>
+
+  <!-- Account Login Screen -->
+  <string name="sync_subtitle_account">&sync.subtitle.account.label;</string>
+  <string name="sync_input_username">&sync.input.username.label;</string>
+  <string name="sync_input_password">&sync.input.password.label;</string>
+  <string name="sync_input_key">&sync.input.key.label;</string>
+  <string name="sync_checkbox_server">&sync.checkbox.server.label;</string>
+  <string name="sync_input_server">&sync.input.server.label;</string>
+
+  <!-- Setup Fail -->
+  <string name="sync_title_fail">&sync.title.fail.label;</string>
+  <string name="sync_subtitle_fail">&sync.subtitle.fail.label;</string>
+  <string name="sync_button_tryagain">&sync.button.tryagain.label;</string>
+  <string name="sync_button_manual">&sync.button.manual.label;</string>
+  <string name="sync_subtitle_nointernet">&sync.subtitle.nointernet.label;</string>
+  <string name="sync_subtitle_failaccount">&sync.subtitle.failaccount.label;</string>
+  <string name="sync_subtitle_failmultiple">&sync.subtitle.failmultiple.label;</string>
+
+  <!-- Setup Success -->
+  <string name="sync_title_success">&sync.title.success.label;</string>
+  <string name="sync_subtitle_success">&sync.subtitle.success.label1;</string>
+  <string name="sync_settings">&sync.settings.label;</string>
+  <string name="sync_subtitle_manage">&sync.subtitle.manage.label1;</string>
+
+  <!-- Pair Device -->
+  <string name="sync_pair_tryagain">&sync.pair.tryagain.label;</string>
+
+  <!-- Firefox SyncAdapter Settings Screen -->
+  <string name="sync_settings_options">&sync.settings.options.label;</string>
+  <string name="sync_settings_summary_pair">&sync.summary.pair.label;</string>
+
+  <!-- Configure Engines -->
+  <string name="sync_configure_engines_title">&sync.configure.engines.title.label;</string>
+  <string name="sync_configure_engines_sync_my_title">&sync.configure.engines.sync.my.title.label;</string>
+  <string name="sync_configure_engines_title_bookmarks">&sync.configure.engines.title.bookmarks;</string>
+  <string name="sync_configure_engines_title_passwords">&sync.configure.engines.title.passwords;</string>
+  <string name="sync_configure_engines_title_history">&sync.configure.engines.title.history;</string>
+  <string name="sync_configure_engines_title_tabs">&sync.configure.engines.title.tabs;</string>
+
+  <!-- Common text -->
+  <string name="sync_button_cancel">&sync.button.cancel.label;</string>
+  <string name="sync_button_connect">&sync.button.connect.label;</string>
+  <string name="sync_button_ok">&sync.button.ok.label;</string>
+
+  <!-- Account strings -->
+  <string name="sync_account_label">&sync.account.label;</string>
+
+  <!-- Bookmark folder strings -->
+  <string name="bookmarks_folder_menu">&bookmarks.folder.menu.label;</string>
+  <string name="bookmarks_folder_places">&bookmarks.folder.places.label;</string>
+  <string name="bookmarks_folder_tags">&bookmarks.folder.tags.label;</string>
+  <string name="bookmarks_folder_toolbar">&bookmarks.folder.toolbar.label;</string>
+  <string name="bookmarks_folder_unfiled">&bookmarks.folder.unfiled.label;</string>
+  <string name="bookmarks_folder_desktop">&bookmarks.folder.desktop.label;</string>
+  <string name="bookmarks_folder_mobile">&bookmarks.folder.mobile.label;</string>
+  <string name="bookmarks_folder_reading_list">&bookmarks.folder.readinglist.label;</string>
+  <string name="bookmarks_folder_pinned">&bookmarks.folder.pinned.label;</string>
+
+  <!-- Notification strings -->
+  <string name="sync_notification_oneaccount">&sync.notification.oneaccount.label;</string>
+  <string name="sync_notification_savedprefs">&sync.notification.configure.saved;</string>
+
+  <!-- Incorrect settings and changing credentials. -->
+  <string name="sync_invalidcreds_label">&sync.invalidcreds.label;</string>
+  <string name="sync_invalidserver_label">&sync.invalidserver.label;</string>
+  <string name="sync_verifying_label">&sync.verifying.label;</string>
+  <string name="sync_new_recoverykey_status_incorrect">&sync.new.recoverykey.status.incorrect;</string>
+
+  <!-- Send tab to device. -->
+  <string name="sync_new_tab">&new_tab;</string>
+  <string name="sync_title_send_tab">&sync.title.send.tab.label;</string>
+  <string name="sync_button_send">&sync.button.send.label;</string>
+  <string name="sync_button_set_up_sync">&sync.button.set.up.sync.label;</string>
+  <string name="sync_title_redirect_to_set_up_sync">&sync.title.redirect.to.set.up.sync.label;</string>
+  <string name="sync_text_redirect_to_set_up_sync">&sync.text.redirect.to.set.up.sync.label;</string>
+  <string name="sync_text_tab_sent">&sync.text.tab.sent.label;</string>
+  <string name="sync_text_tab_not_sent">&sync.text.tab.not.sent.label;</string>
+
+<string name="browser_intent_package">org.mozilla.gecko</string>
+<string name="browser_intent_class">org.mozilla.gecko</string>
+
+<!-- Firefox account strings. -->
+
+<!-- Firefox account links. -->
+<!-- https://support.mozilla.org/1/mobile/%VERSION%/%OS%/%LOCALE%/old-sync -->
+
+
+
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+  <!-- Used for setup success. -->
+
+<!-- Firefox Account strings. -->
+
+<!-- Firefox Account links. -->
+<!-- https://support.mozilla.org/1/mobile/%VERSION%/%OS%/%LOCALE%/old-sync -->
+<string name="fxaccount_link_old_firefox">https://support.mozilla.org/1/mobile/&formatS1;/&formatS2;/&formatS3;/old-sync</string>
+<string name="fxaccount_link_create_not_allowed">http://www.consumer.ftc.gov/articles/0031-protecting-your-childs-privacy-online</string>
+<string name="fxaccount_link_tos">https://accounts.firefox.com/legal/terms</string>
+<string name="fxaccount_link_pn">https://accounts.firefox.com/legal/privacy</string>
+<string name="fxaccount_link_forgot_password">https://accounts.firefox.com/reset_password</string>
+
+<!-- Per Bug 974627, decorative images should not have non-empty
+     contentDescription text, and it should not be translated. -->
+<string name="fxaccount_empty_contentDescription"></string>
+
+<string name="fxaccount_email_hint">&fxaccount_email_hint;</string>
+<string name="fxaccount_password_hint">&fxaccount_password_hint;</string>
+<string name="fxaccount_password_hide">&fxaccount_password_hide;</string>
+<string name="fxaccount_password_show">&fxaccount_password_show;</string>
+
+<string name="fxaccount_back_to_browsing">&fxaccount_back_to_browsing;</string>
+
+<string name="fxaccount_policy_linktos">&fxaccount_policy_linktos;</string>
+<string name="fxaccount_policy_linkprivacy">&fxaccount_policy_linkprivacy;</string>
+
+<string name="fxaccount_getting_started_welcome_to_sync">&fxaccount_getting_started_welcome_to_sync;</string>
+<string name="fxaccount_getting_started_description">&fxaccount_getting_started_description;</string>
+<string name="fxaccount_getting_started_get_started">&fxaccount_getting_started_get_started;</string>
+<string name="fxaccount_getting_started_old_firefox">&fxaccount_getting_started_old_firefox;</string>
+
+<string name="fxaccount_create_account_header">&fxaccount_create_account_header;</string>
+<string name="fxaccount_create_account_password_length_restriction">&fxaccount_create_account_password_length_restriction;</string>
+<string name="fxaccount_create_account_year_of_birth">&fxaccount_create_account_year_of_birth;</string>
+
+<string name="fxaccount_create_account_policy_text">&fxaccount_create_account_policy_text;</string>
+<string name="fxaccount_create_account_button">&fxaccount_create_account_button;</string>
+<string name="fxaccount_create_account_choose_what_to_sync">&fxaccount_create_account_choose_what_to_sync;</string>
+<string name="fxaccount_create_account_sign_in_instead">&fxaccount_create_account_sign_in_instead;</string>
+<string name="fxaccount_create_account_1990_or_earlier">&fxaccount_create_account_1990_or_earlier;</string>
+<string name="fxaccount_create_account_unknown_error">&fxaccount_create_account_unknown_error;</string>
+
+<string name="fxaccount_account_create_not_allowed">&fxaccount_account_create_not_allowed;</string>
+<string name="fxaccount_account_create_not_allowed_you_must_meet_certain_age_requirements">&fxaccount_account_create_not_allowed_you_must_meet_certain_age_requirements;</string>
+<string name="fxaccount_account_create_not_allowed_learn_more">&fxaccount_account_create_not_allowed_learn_more;</string>
+
+<string name="fxaccount_confirm_account_header">&fxaccount_confirm_account_header;</string>
+<string name="fxaccount_confirm_account_verification_link">&fxaccount_confirm_account_verification_link;</string>
+<string name="fxaccount_confirm_account_resend_email">&fxaccount_confirm_account_resend_email;</string>
+<string name="fxaccount_confirm_account_verification_link_sent">&fxaccount_confirm_account_verification_link_sent2;</string>
+<string name="fxaccount_confirm_account_verification_link_not_sent">&fxaccount_confirm_account_verification_link_not_sent2;</string>
+
+<string name="fxaccount_sign_in_sub_header">&fxaccount_sign_in_sub_header;</string>
+<string name="fxaccount_sign_in_button_label">&fxaccount_sign_in_button_label;</string>
+<string name="fxaccount_sign_in_forgot_password">&fxaccount_sign_in_forgot_password;</string>
+<string name="fxaccount_sign_in_create_account_instead">&fxaccount_sign_in_create_account_instead;</string>
+<string name="fxaccount_sign_in_unknown_error">&fxaccount_sign_in_unknown_error;</string>
+
+<string name="fxaccount_account_verified_sub_header">&fxaccount_account_verified_sub_header;</string>
+<string name="fxaccount_account_verified_description">&fxaccount_account_verified_description2;</string>
+
+<string name="fxaccount_update_credentials_header">&fxaccount_update_credentials_header;</string>
+<string name="fxaccount_update_credentials_button_label">&fxaccount_update_credentials_button_label;</string>
+<string name="fxaccount_update_credentials_unknown_error">&fxaccount_update_credentials_unknown_error;</string>
+
+<string name="fxaccount_status_activity_label">&syncBrand.shortName.label;</string>
+<string name="fxaccount_status_header"> </string>
+<string name="fxaccount_status_signed_in_as">&fxaccount_status_signed_in_as;</string>
+<string name="fxaccount_status_sync">&fxaccount_status_sync;</string>
+<string name="fxaccount_status_sync_enabled">&fxaccount_status_sync_enabled;</string>
+<string name="fxaccount_status_needs_verification">&fxaccount_status_needs_verification2;</string>
+<string name="fxaccount_status_needs_credentials">&fxaccount_status_needs_credentials;</string>
+<string name="fxaccount_status_needs_upgrade">&fxaccount_status_needs_upgrade;</string>
+<string name="fxaccount_status_needs_master_sync_automatically_enabled"> </string>
+<string name="fxaccount_status_needs_account_enabled"> </string>
+<string name="fxaccount_status_bookmarks">&fxaccount_status_bookmarks;</string>
+<string name="fxaccount_status_history">&fxaccount_status_history;</string>
+<string name="fxaccount_status_passwords">&fxaccount_status_passwords;</string>
+<string name="fxaccount_status_tabs">&fxaccount_status_tabs;</string>
+<string name="fxaccount_status_legal">&fxaccount_status_legal;</string>
+<string name="fxaccount_status_linktos"> </string>
+<string name="fxaccount_status_linkprivacy"> </string>
+
+<string name="fxaccount_label">&fxaccount_account_type_label;</string>
+
+	<string name="fxaccount_options_title">&fxaccount_options_title;</string>
+	<string name="fxaccount_options_configure_title">&fxaccount_options_configure_title;</string>
+
+<string name="fxaccount_remote_error_UPGRADE_REQUIRED">&fxaccount_remote_error_UPGRADE_REQUIRED;</string>
+<string name="fxaccount_remote_error_ATTEMPT_TO_CREATE_AN_ACCOUNT_THAT_ALREADY_EXISTS">&fxaccount_remote_error_ATTEMPT_TO_CREATE_AN_ACCOUNT_THAT_ALREADY_EXISTS_2;</string>
+<string name="fxaccount_remote_error_ATTEMPT_TO_ACCESS_AN_ACCOUNT_THAT_DOES_NOT_EXIST">&fxaccount_remote_error_ATTEMPT_TO_ACCESS_AN_ACCOUNT_THAT_DOES_NOT_EXIST;</string>
+<string name="fxaccount_remote_error_INCORRECT_PASSWORD">&fxaccount_remote_error_INCORRECT_PASSWORD;</string>
+<string name="fxaccount_remote_error_ATTEMPT_TO_OPERATE_ON_AN_UNVERIFIED_ACCOUNT">&fxaccount_remote_error_ATTEMPT_TO_OPERATE_ON_AN_UNVERIFIED_ACCOUNT;</string>
+<string name="fxaccount_remote_error_CLIENT_HAS_SENT_TOO_MANY_REQUESTS">&fxaccount_remote_error_CLIENT_HAS_SENT_TOO_MANY_REQUESTS;</string>
+<string name="fxaccount_remote_error_SERVICE_TEMPORARILY_UNAVAILABLE_TO_DUE_HIGH_LOAD">&fxaccount_remote_error_SERVICE_TEMPORARILY_UNAVAILABLE_TO_DUE_HIGH_LOAD;</string>
+<string name="fxaccount_remote_error_UNKNOWN_ERROR">&fxaccount_remote_error_UNKNOWN_ERROR;</string>
+<string name="fxaccount_remote_error_COULD_NOT_CONNECT">&fxaccount_remote_error_COULD_NOT_CONNECT;</string>
+
+<string name="fxaccount_sync_sign_in_error_notification_title">&fxaccount_sync_sign_in_error_notification_title2;</string>
+<string name="fxaccount_sync_sign_in_error_notification_text">&fxaccount_sync_sign_in_error_notification_text2;</string>
+
+
+
+  <!-- These strings are defined by Fennec and used in res/xml/*.xml. -->
+  <string name="moz_app_displayname">Firefox</string>
+  <string name="android_package_name">org.mozilla.gecko</string>
+  <string name="content_authority_db_browser">com.sec.android.app.sbrowser</string>
+  <!-- <string name="moz_android_shared_account_type">org.mozilla.firefox_sync</string> -->
+  <string name="moz_android_shared_account_type">org.mozilla.gecko</string>
+  <string name="moz_android_shared_fxaccount_type">org.mozilla.gecko</string>
+	<string name="android_package_name_for_ui">org.mozilla.gecko</string>
+	
+	
+  
+</resources>

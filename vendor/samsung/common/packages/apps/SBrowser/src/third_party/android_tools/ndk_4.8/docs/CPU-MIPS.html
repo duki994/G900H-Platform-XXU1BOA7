@@ -1,0 +1,42 @@
+<h1>Android NDK MIPS32 instruction set support</h1>
+<h2>Introduction:</h2>
+<p>Android NDK r8 added support for the 'mips' ABI, that allows native code to
+run on Android-based devices running on CPUs supporting the MIPS32 instruction
+set.</p>
+<p>The Android 'mips' ABI itself is fully specified in <a href="CPU-ARCH-ABIS.html">CPU-ARCH-ABIS</a>.</p>
+<h2>Overview:</h2>
+<p>Generating mips machine code is simple: just add 'mips' to your <code>APP_ABI</code>
+definition in your Application.mk file, for example:</p>
+<pre><code>    APP_ABI := armeabi armeabi-v7a mips
+</code></pre>
+<p>Alternatively, since NDK r7, you can use:</p>
+<pre><code>    APP_ABI := all
+</code></pre>
+<p>will generate machine code for all supported ABIs with this NDK. Doing so
+will ensure that your application package contains libraries for all target
+ABIs. Note that this has an impact on package size, since each ABI will
+correspond to its own set of native libraries built from the same sources.</p>
+<p>As you would expect, generated libraries will go into $PROJECT/libs/mips/, and
+will be embedded into your .apk under /lib/mips/.</p>
+<p>And just like other ABIs, the Android package manager will extract these
+libraries on a <em>compatible</em> mips-based device automatically at install time,
+to put them under <code>&lt;dataPath&gt;/lib</code>, where <code>&lt;dataPath&gt;</code> is the
+application's private data directory.</p>
+<p>Similarly, the Android Market server is capable of filtering applications
+based on the native libraries they embed and your device's target CPU.</p>
+<p>Debugging with ndk-gdb should work exactly as described under <a href="NDK-GDB.html">NDK-GDB</a>.</p>
+<h2>Standalone-toolchain:</h2>
+<p>It is possible to use the mips toolchain with NDK r8 in stand-alone mode.
+See <a href="STANDALONE-TOOLCHAIN.html">STANDALONE-TOOLCHAIN</a> for more details. Briefly speaking,
+it is now possible to run:</p>
+<pre><code>    $NDK/build/tools/make-standalone-toolchain.sh --arch=mips --install-dir=&lt;path&gt;
+</code></pre>
+<p>The toolchain binaries have the mipsel-linux-android- prefix.</p>
+<h2>Compatibility:</h2>
+<p>The minimal native API level provided by official Android mips platform builds
+is 9, which corresponds to all the native APIs provided by Android 2.3, i.e.
+Gingerbread (note also that no new native APIs were introduced by Honeycomb).</p>
+<p>You won't have to change anything to your project files if you target an older
+API level: the NDK build script will automatically select the right set of
+native platform headers/libraries for you. For mips, this still corresponds
+to API level 9 and higher.</p>

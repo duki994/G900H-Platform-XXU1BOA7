@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+if __name__ == "__main__":
+    telemetry_dir = os.path.abspath(
+            os.path.join(os.path.dirname(__file__), "..", "telemetry/"))
+    if not os.path.isdir(telemetry_dir):
+        raise RuntimeError(telemetry_dir+" is not a directory")
+
+    sys.path.append(telemetry_dir)
+    from telemetry.core.platform.profiler.monsoon import Monsoon
+
+    monsoon = Monsoon()
+
+    print monsoon.GetStatus()
+
+    monsoon.SetMaxCurrent(5.0)
+    monsoon.SetUsbPassthrough(0)
+    monsoon.SetVoltage(4.0)
+
+    monsoon.StartDataCollection()
+    samples = monsoon.CollectData()
+    monsoon.StopDataCollection()
+
+    print monsoon.GetStatus()
+    print samples

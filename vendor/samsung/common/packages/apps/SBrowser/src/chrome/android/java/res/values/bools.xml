@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Javascript Modeal Dialog Start -->
+    <bool name="javascript_modal_dialog_canceled_on_touch_outside">false</bool>
+    <!-- Javascript Modeal Dialog End -->
+</resources>

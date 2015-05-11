@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html i18n-values="dir:textdirection">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,
+                                 maximum-scale=1.0, user-scalable=no">
+  <title i18n-content="title"></title>
+  <link rel="stylesheet" href="neterror.css">
+  <script src="neterror.js"></script>
+</head>
+<body id="t">
+  <div id="main-frame-error">
+    <div id="box">
+      <div id="content-top">
+        <h1> 
+          <br>
+          <span i18n-content="heading"></span>
+        </h1>        
+      </div>
+       <!-- Outer and inner divs are needed both for margins and sizing. -->
+      <div id="help-box-outer" class="visible">
+        <div id="help-box-inner">
+          <div jsselect="summary">
+            <span jsvalues=".innerHTML:msg"></span>
+            <br><br>
+            지속적으로 접속이 불가한 경우 아래와 같은 순서의 방법으로 체크해주세요.
+            <ul>
+	     <li>주소에 오타가 있을 수 있으니, 입력된 주소를 재확인해주세요.</li>
+	     <li>웹 사이트를 일시적으로 사용할 수 없으니 잠시 후 재시도 하십시오.</li>
+	     <li>비행기 탑승 모드 활성화 후 다시 해제하여 데이터 초기화를 해주십시오.
+	     <br>(전원키 길게 누름-비행기 탑승 모드 실행/해제)<br>
+	     </li>
+	     <li>네트워크의 일시적 문제일 수 있으니 휴대폰을 껐다 켜주세요.</li>
+	     <li>문제가 지속되는 경우에는 고객센터(114)로 문의해주세요.</li>	   
+            </ul>
+          </div>          
+          <div id="diagnose-frame" class="hidden"></div>
+          <div class="error-code" jscontent="errorCode"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="sub-frame-error">
+    <!-- Show details when hovering over the icon, in case the details are
+         hidden because they're too large. -->
+    <img class="icon" jseval="updateIconClass(this.classList, iconClass)"
+        jsvalues=".title:errorDetails">
+    <div id="sub-frame-error-details" jsvalues=".innerHTML:errorDetails"></div>
+  </div>
+</body>
+</html>
